@@ -9,5 +9,7 @@
 <body>
    
     <?php if ($custom_logo): ?>
-        <a href="<?= get_site_url(); ?>"><img src="<?= $logo_url ?>" alt="Logo" class="logo"></a>
+        <div class="image-logo"><a href="<?= get_site_url(); ?>"><img src="<?= $logo_url ?>" alt="Logo" class="logo"></a></div>
+    <?php else: ?>
+        <div class="text-logo"><?= get_bloginfo('name'); ?></div>
     <?php endif; ?>
