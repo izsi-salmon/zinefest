@@ -104,5 +104,5 @@ function wpdocs_excerpt_more( $more ) {
 }
 add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
 // ----- REQUIREMENTS -----
-//require get_parent_theme_file_path('/addons/custom-customizer.php');
+require get_parent_theme_file_path('/addons/custom-customizer.php');
 //require get_parent_theme_file_path('/addons/custom-fields.php');

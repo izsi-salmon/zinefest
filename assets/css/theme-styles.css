@@ -1,4 +1,73 @@
+/* COLOURS            RGB VALUES */
+@font-face {
+  font-family: 'Open Dyslexic';
+  src: url(../fonts/OpenDyslexic-Regular.otf);
+  font-weight: normal;
+  font-style: normal; }
+@font-face {
+  font-family: 'Open Dyslexic';
+  src: url(../fonts/OpenDyslexic-Italic.otf);
+  font-weight: normal;
+  font-style: italic; }
+@font-face {
+  font-family: 'Open Dyslexic';
+  src: url(../fonts/OpenDyslexic-Bold.otf);
+  font-weight: 600;
+  font-style: normal; }
+@font-face {
+  font-family: 'Open Dyslexic';
+  src: url(../fonts/OpenDyslexic-BoldItalic.otf);
+  font-weight: 600;
+  font-style: italic; }
 * {
-  margin: 0; }
+  font-family: 'Open Dyslexic';
+  margin: 0;
+  padding: 0; }
+
+p {
+  font-size: 0.9em; }
+
+.image-logo {
+  margin: 1em auto;
+  text-align: center; }
+  .image-logo img {
+    max-width: 125px; }
+
+.banner-img-container {
+  margin: 0 auto;
+  height: 40vw;
+  overflow: hidden;
+  width: 100vw; }
+  .banner-img-container img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%; }
+
+.banner-link-container {
+  font-size: 0.7em;
+  text-align: right;
+  text-transform: uppercase;
+  transform: translateY(-50%); }
+  .banner-link-container .banner-link {
+    background-color: #fde784;
+    color: black;
+    padding: 0.2em 0.5em;
+    text-align: right;
+    text-decoration: none; }
+
+.home-content {
+  margin: 0 auto;
+  width: 90vw; }
+
+.home-title {
+  font-size: 2.7em;
+  line-height: 1.3em;
+  margin: 0.7em 0; }
+
+.home-images img {
+  max-width: 60vw; }
+
+/* END */
 
 /*# sourceMappingURL=theme-styles.css.map */
