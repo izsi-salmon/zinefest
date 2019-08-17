@@ -53,21 +53,81 @@ p {
     background-color: #fde784;
     color: black;
     padding: 0.2em 0.5em;
-    text-align: right;
     text-decoration: none; }
 
-.home-content {
+.collumn {
+  position: relative; }
+
+.home-text-container {
   margin: 0 auto;
-  width: 90vw; }
+  position: relative;
+  width: 90vw;
+  z-index: 1; }
+  .home-text-container .home-title {
+    font-size: 2.7em;
+    line-height: 1.3em;
+    margin: 0.7em 0; }
 
-.home-title {
-  font-size: 2.7em;
-  line-height: 1.3em;
-  margin: 0.7em 0; }
+.home-images {
+  margin-left: 10vw; }
+  .home-images img {
+    display: block;
+    position: relative;
+    max-width: 65vw; }
+  .home-images .home-image-1 {
+    transform: translateY(2em) rotateZ(-24deg);
+    z-index: 1; }
+  .home-images .home-image-2 {
+    transform: translate(1.5em, -1em);
+    z-index: 2; }
+  .home-images .home-image-3 {
+    transform: translateY(-3.5em) rotateZ(24deg);
+    z-index: 3; }
 
-.home-images img {
-  max-width: 60vw; }
+.colour-block-home {
+  background-color: #e7d0ae;
+  position: absolute;
+  top: -3.5em;
+  bottom: 0;
+  width: 55%; }
 
+@media only screen and (min-width: 568px) {
+  .home-text-container .home-title {
+    font-size: 3em;
+    max-width: 50vw; }
+
+  .home-images {
+    display: flex;
+    margin: 0 auto;
+    padding: 3.5em 0 5.5em 0;
+    width: 100%; }
+    .home-images img {
+      max-width: 33%;
+      align-self: center; }
+    .home-images .home-image-1 {
+      transform: translateX(3em) translateY(0) rotateZ(-10deg);
+      z-index: 1; }
+    .home-images .home-image-2 {
+      transform: translate(-2em, 1em) rotateZ(-10deg);
+      z-index: 2; }
+    .home-images .home-image-3 {
+      transform: translateX(-6em) translateY(2em) rotateZ(-10deg);
+      z-index: 3; } }
+@media only screen and (min-width: 768px) {
+  .image-logo img {
+    max-width: 170px; }
+
+  .banner-link-container {
+    font-size: 0.9em;
+    margin-right: 2.5%;
+    transform: translateY(-50%); }
+    .banner-link-container .banner-link {
+      padding: 0.3em 0.65em; }
+
+  .home-text-container .home-title {
+    font-size: 3.5em; }
+  .home-text-container .home-description {
+    max-width: 70%; } }
 /* END */
 
 /*# sourceMappingURL=theme-styles.css.map */
