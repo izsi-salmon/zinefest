@@ -54,7 +54,7 @@ p{
     margin: 0 auto;
     height: 40vw;
     overflow: hidden;
-    width: 100vw;
+    width: 100%;
     img{
         display: block;
         height: 100%;
@@ -94,6 +94,7 @@ p{
 
 .home-images{
     margin-left: 10vw;
+    padding-top: 2em;
     img{
         display: block;
         position: relative;
@@ -114,11 +115,11 @@ p{
 }
 
 .colour-block-home{
-    background-color: $brown;
+    background-color: $yellow;
     position: absolute;
         top: -3.5em;
         bottom: 0;
-    width: 55%;
+    width: 60%;
 }
 
 @media only screen and (min-width: 568px) {
@@ -126,7 +127,7 @@ p{
     .home-text-container{
         .home-title{
             font-size: 3em;
-            max-width: 50vw;
+            max-width: 50%;
         }
     }
     
@@ -154,6 +155,8 @@ p{
     }
 }
 
+
+
 @media only screen and (min-width: 768px) {
     
     .image-logo{
@@ -165,7 +168,6 @@ p{
     .banner-link-container{
         font-size: 0.9em;
         margin-right: 2.5%;
-        transform: translateY(-50%);
         .banner-link{
             padding: 0.3em 0.65em;
         }
@@ -180,6 +182,96 @@ p{
         }
     }
     
+}
+
+@media only screen and (min-width: 1200px) {
+    
+    .image-logo{
+        margin: 2em auto;
+        img {
+            max-width: 200px;
+        }
+    }
+    
+    .banner-img-container{
+        height: 32vw;
+        width: 80%;
+        img{
+        }
+    }
+    
+    .banner-link-container{
+        font-size: 1em;
+        margin: 2em auto;
+        transform: translateY(0);
+        width: 80%;
+    }
+    
+    .home-content{
+        display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-start;
+        width: 100%;
+        .collumn{
+            box-sizing: border-box;
+        }
+        .collumn-text{
+//            display: flex;
+//            flex-direction: column;
+//            justify-content: center;
+            flex-basis: 55%;
+        }
+        .collumn-images{
+            flex-basis: 35%;
+        }
+        .home-text-container{
+            margin: 6.5em 0 3em 0;
+            position: relative;
+            width: auto;
+            .home-title{
+                font-size: 4em;
+                line-height: 1.3em;
+                margin: 0.7em 0;
+            }
+            .home-description{
+                max-width: 70%;
+            }
+        }
+        .home-image-container{
+            .home-images{
+                display: block;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                img{
+                    max-width: 70%;
+                    align-self: center;
+                }
+                .home-image-1{
+                    transform: translateY(3em) rotateZ(-24deg);
+                    z-index: 1;
+                }
+                .home-image-2{
+                    transform: translate(3em, -1em);
+                    z-index: 2;
+                }
+                .home-image-3{
+                    transform: translateY(-5em) rotateZ(24deg);
+                    z-index: 3;
+                }
+            }
+
+            .colour-block-home{
+                position: absolute;
+                    top: 12em;
+                    right: -8em;
+                    bottom: 0;
+                width: 90%;
+            }
+        }
+    }
+    
+
 }
 
 

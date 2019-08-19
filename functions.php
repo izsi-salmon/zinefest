@@ -9,7 +9,7 @@ function addCustomThemeStyles(){
 //  wp_enqueue_style('commentstyles', get_template_directory_uri() . '/assets/comments-styles.css', array(), '1.0.0', 'all');
   // Scripts
 //  wp_enqueue_script('jquery');
-//  wp_enqueue_script('themescripts', get_template_directory_uri().'/assets/theme-script.js', array(), '0.0.7', true);
+  wp_enqueue_script('themescripts', get_template_directory_uri().'/assets/theme-script.js', array(), '0.0.7', true);
   global $wp_query;
 }
 add_action('wp_enqueue_scripts', 'addCustomThemeStyles');

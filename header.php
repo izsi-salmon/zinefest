@@ -7,7 +7,6 @@
     <?php wp_head(); ?>
 </head>
 <body>
-  
     <?php
         $custom_logo = get_theme_mod('custom_logo');
         $logo_url = wp_get_attachment_image_url($custom_logo, 'small');
