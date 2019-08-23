@@ -64,9 +64,9 @@ add_filter( 'nav_menu_link_attributes', function ( $atts, $item, $args ) {
 //
 //function add_post_type(){
 //    $labels = array(
-//        'name' => _x('', 'post type name', 'cmosTheme'),
-//        'singular_name' => _x('', 'post type singular name', 'cmosTheme'),
-//        'add_new_item' => _x('Add ', 'Adding ', 'cmosTheme')
+//        'name' => _x('', 'post type name', 'textdomain'),
+//        'singular_name' => _x('', 'post type singular name', 'textdomain'),
+//        'add_new_item' => _x('Add ', 'Adding ', 'textdomain')
 //    );
 //    
 //    $args = array(
@@ -90,8 +90,35 @@ add_filter( 'nav_menu_link_attributes', function ( $atts, $item, $args ) {
 //}
 // Don't forget to add action! :)
 
+function add_events_post_type(){
+    $labels = array(
+        'name' => _x('events', 'post type name', 'zinefestTheme'),
+        'singular_name' => _x('event', 'post type singular name', 'zinefestTheme'),
+        'add_new_item' => _x('Add event', 'Adding event', 'zinefestTheme')
+    );
+    
+    $args = array(
+        'labels' => $labels,
+        'description' => 'Post type that creates a new event',
+        'public' => true,
+        'hierarchical' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_nav_menus' => false,
+        'menu_position' => '1',
+        'menu_icon' => 'dashicons-calendar-alt',
+        'supports' => array(
+            'title',
+            'editor',
+            'thumbnail'
+        ),
+        'query_var' => true
+    );
+    register_post_type('events', $args);
+}
+
 // ----- ADD POST TYPES ------
-//add_action('init','add_post_type');
+add_action('init','add_events_post_type');
 // ----- REMOVE ACTIONS -----
 // Stop wordpress from rendering two meta descriptions
 //remove_action('wp_head', 'description');
@@ -105,4 +132,4 @@ function wpdocs_excerpt_more( $more ) {
 add_filter( 'excerpt_more', 'wpdocs_excerpt_more' );
 // ----- REQUIREMENTS -----
 require get_parent_theme_file_path('/addons/custom-customizer.php');
-//require get_parent_theme_file_path('/addons/custom-fields.php');
+require get_parent_theme_file_path('/addons/custom-fields.php');

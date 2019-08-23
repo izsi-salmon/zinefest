@@ -1,16 +1,46 @@
 <?php get_header(); ?>
-<?php if( get_theme_mod('event_banner_setting')): ?>
+
+<?php
+    $eventArgs = array(
+        'post_type' => 'events',
+        'posts_per_page' => -1
+    );
+    $events = new WP_Query($eventArgs);
+    
+    $featuredEvent = false;
+    $featuredEventBanner;
+    $featuredEventLink;
+?>
+
+<?php if( $events->have_posts() ): ?>
+   <?php while($events->have_posts()): $events->the_post(); ?>
+     <?php $featured =  get_post_meta( $id, 'featured', true ); ?>
+       <?php if($featured){
+                $featuredEvent = true;
+                if(has_post_thumbnail()){
+                    $featuredEventBanner = get_the_post_thumbnail_url();
+                    $featuredEventLink = esc_url(get_permalink());
+                }
+            }
+        ?>
+   <?php endwhile; ?>
+<?php endif; ?>
+   
+<?php if($featuredEvent === true): ?>
    <div class="banner-img-container">
-       <img src="<?php echo get_theme_mod( 'event_banner_setting'); ?>" alt="Latest event poster">
+       <img src="<?= $featuredEventBanner; ?>" alt="Latest event poster">
    </div>
-   <?php if($featuredevent): ?>
-       <div class="banner-link-container">
-           <a href="#" class="banner-link">Check out this event</a>
-       </div>
-   <?php else: ?>
-       <div class="no-link-margin"></div>    
+   <div class="banner-link-container">
+       <a href="<?= $featuredEventLink; ?>" class="banner-link">Check out this event</a>
+   </div>
+<?php else: /* Display banner from customiser */ ?>
+   <?php if( get_theme_mod('homepage_banner_setting')): ?>
+      <div class="banner-img-container">
+          <img src="<?php echo get_theme_mod( 'homepage_banner_setting'); ?>" alt="Latest event poster">
+      </div>
+      <div class="no-link-margin"></div>
    <?php endif; ?>
-<?php endif ?>
+<?php endif; ?>
 
 <div class="home-content">
    <div class="collumn collumn-text">

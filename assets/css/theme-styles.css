@@ -24,8 +24,12 @@
   margin: 0;
   padding: 0; }
 
+h1 {
+  font-size: 1.6em; }
+
 p {
-  font-size: 0.9em; }
+  font-size: 0.9em;
+  margin-bottom: 0.7em; }
 
 .image-logo {
   margin: 1em auto;
@@ -35,7 +39,7 @@ p {
 
 .banner-img-container {
   margin: 0 auto;
-  height: 40vw;
+  height: 52vw;
   overflow: hidden;
   width: 100%; }
   .banner-img-container img {
@@ -92,6 +96,41 @@ p {
   bottom: 0;
   width: 60%; }
 
+.main-content {
+  margin: 1em auto 2em;
+  width: 90%; }
+  .main-content .event-details {
+    background-image: url(../splotch-brown.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+    font-size: 0.8em;
+    margin: 0.5em 0 1em;
+    padding: 0.5em 1.5em; }
+  .main-content .registration-title {
+    background-color: #b4dccf;
+    display: inline-block;
+    height: 1.6em;
+    margin: 2em 0 1em;
+    text-transform: uppercase; }
+    .main-content .registration-title h2 {
+      transform: translate(20%, -50%); }
+  .main-content .registration-link {
+    display: inline-flex;
+    align-items: center;
+    padding-right: 0.25em; }
+    .main-content .registration-link .link-arrrow {
+      height: 1em;
+      margin-left: 0.3em; }
+  .main-content a.registration-link:link, .main-content a.registration-link:visited, .main-content a.registration-link:active, .main-content a.registration-link:hover {
+    color: black;
+    text-decoration: none; }
+  .main-content a.registration-link:hover, .main-content a.registration-link:active {
+    background-image: url(../dash-yellow.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain; }
+
 @media only screen and (min-width: 568px) {
   .home-text-container .home-title {
     font-size: 3em;
@@ -127,22 +166,31 @@ p {
   .home-text-container .home-title {
     font-size: 3.5em; }
   .home-text-container .home-description {
-    max-width: 70%; } }
-@media only screen and (min-width: 1200px) {
+    max-width: 70%; }
+
+  .main-content {
+    margin: 2.5em auto 3em;
+    width: 80%; }
+    .main-content .event-details {
+      margin: 0.7em 0 1.5em; } }
+@media only screen and (min-width: 1024px) {
   .image-logo {
     margin: 2em auto; }
     .image-logo img {
       max-width: 200px; }
 
   .banner-img-container {
-    height: 32vw;
-    width: 80%; }
+    height: 30vw;
+    width: 60%; }
+
+  .no-link-margin {
+    margin-bottom: 5em; }
 
   .banner-link-container {
     font-size: 1em;
     margin: 2em auto;
     transform: translateY(0);
-    width: 80%; }
+    width: 60%; }
 
   .home-content {
     display: flex;
@@ -187,7 +235,19 @@ p {
       top: 12em;
       right: -8em;
       bottom: 0;
-      width: 90%; } }
+      width: 90%; }
+
+  .main-content {
+    margin: 3em auto 4.5em;
+    width: 60%; }
+    .main-content .event-details {
+      margin: 1em 0 2em; }
+    .main-content .registration {
+      display: flex;
+      margin-top: 5.5em; }
+      .main-content .registration .registration-title {
+        margin: 1em 0 0 0;
+        transform: rotateZ(-45deg) translateX(1em); } }
 /* END */
 
 /*# sourceMappingURL=theme-styles.css.map */

@@ -16,9 +16,9 @@ function custom_theme_customizer( $wp_customize ){
 //        'panel' => 'panel_name'
 //    ));
     
-    // Featured banner image
-    $wp_customize->add_section('featured_event_banner', array(
-        'title' => __('Featured Event Banner', 'zinefestTheme')
+    // Homepage banner image
+    $wp_customize->add_section('homepage_banner', array(
+        'title' => __('Homepage Banner', 'zinefestTheme')
     ));
     
     // Home images
@@ -48,21 +48,21 @@ function custom_theme_customizer( $wp_customize ){
 //        )
 //    );
     
-    // Featured Event Banner
-    $wp_customize->add_setting('event_banner_setting', array(
+    // Homepage Banner
+    $wp_customize->add_setting('homepage_banner_setting', array(
         'default'   => '',
-        'transport' => 'none'
+        'transport' => 'refresh'
     ));
     
     $wp_customize->add_control(
         new WP_Customize_Image_Control(
            $wp_customize,
-           'Event Banner',
+           'homepage_banner_control',
            array(
-               'label'       => __('Event Banner Image', 'zinefestTheme'),
-               'description' => 'Upload a banner image. Recommended size x:',
-               'section'     => 'featured_event_banner',
-               'settings'    => 'event_banner_setting'
+               'label'       => __('Homepage Banner Image', 'zinefestTheme'),
+               'description' => 'Upload a banner image. The banner dimensions are 2x1 (eg. an image of 1000px x 500px fits perfectly in the frame).',
+               'section'     => 'homepage_banner',
+               'settings'    => 'homepage_banner_setting'
            )
        )
    );
@@ -72,7 +72,7 @@ function custom_theme_customizer( $wp_customize ){
     // First image
     $wp_customize->add_setting('first_image_setting', array(
         'default'   => '',
-        'transport' => 'none'
+        'transport' => 'refresh'
     ));
     
     $wp_customize->add_control(
@@ -91,7 +91,7 @@ function custom_theme_customizer( $wp_customize ){
     // Second image
     $wp_customize->add_setting('second_image_setting', array(
         'default'   => '',
-        'transport' => 'none'
+        'transport' => 'refresh'
     ));
     
     $wp_customize->add_control(
@@ -110,7 +110,7 @@ function custom_theme_customizer( $wp_customize ){
     // Third Image
     $wp_customize->add_setting('third_image_setting', array(
         'default'   => '',
-        'transport' => 'none'
+        'transport' => 'refresh'
     ));
     
     $wp_customize->add_control(
