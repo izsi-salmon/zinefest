@@ -37,6 +37,10 @@ p {
   .image-logo img {
     max-width: 125px; }
 
+a:link, a:visited, a:hover, a:active {
+  color: #078b62;
+  text-decoration: none; }
+
 .banner-img-container {
   margin: 0 auto;
   height: 52vw;
@@ -95,6 +99,54 @@ p {
   top: -3.5em;
   bottom: 0;
   width: 60%; }
+
+.page-title {
+  background-image: url(../dash-brown.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: inline-block;
+  margin: 0;
+  padding: 0 0.3em 0.8em 0; }
+
+.event-row .event-card {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: -7em auto 3em;
+  width: 75%; }
+  .event-row .event-card .event-card-image-container {
+    display: block;
+    height: 55vw;
+    overflow: hidden;
+    transform: translateY(50%);
+    width: 55vw; }
+    .event-row .event-card .event-card-image-container img {
+      display: block;
+      height: 100%;
+      object-fit: cover;
+      width: 100%; }
+  .event-row .event-card .event-card-text {
+    background-color: #b4dccf;
+    padding: 0 1.5em;
+    padding-top: calc(26.5vw + 2em); }
+    .event-row .event-card .event-card-text .event-card-title {
+      text-transform: uppercase; }
+    .event-row .event-card .event-card-text .event-card-date {
+      font-size: 0.8em; }
+    .event-row .event-card .event-card-text .event-card-location {
+      font-size: 0.8em;
+      font-style: italic; }
+    .event-row .event-card .event-card-text .event-card-link {
+      color: black;
+      display: block;
+      background-image: url(../dash-brown.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      text-align: center;
+      transform: translateY(30%); }
 
 .main-content {
   margin: 1em auto 2em;
@@ -174,6 +226,9 @@ p {
     .main-content .event-details {
       margin: 0.7em 0 1.5em; } }
 @media only screen and (min-width: 1024px) {
+  h1 {
+    font-size: 2em; }
+
   .image-logo {
     margin: 2em auto; }
     .image-logo img {

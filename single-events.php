@@ -1,29 +1,9 @@
-<?php
-
-/*
-
-- Title - TICK
-- Image - TICK
-- Summary (Used on events list page) - TICK
-- Description - TICK
-- Address - TICK
-- Date -TICK
-- Start time - TICK
-- End time - TICK
-- Featured option - TICK
-- Registrations links - TICK
-
-*/
-
-?>
-
+<?php get_header(); ?>
 <?php 
     $id= get_the_id();
     $post = get_post($id); 
     $content = apply_filters('the_content', $post->post_content); 
 ?>
-
-<?php get_header(); ?>
 
 <?php  if(has_post_thumbnail()): ?>
    <div class="banner-img-container">

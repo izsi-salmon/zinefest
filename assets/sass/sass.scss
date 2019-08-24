@@ -55,6 +55,11 @@ p{
     }
 }
 
+a:link, a:visited, a:hover, a:active{
+    color: $green;
+    text-decoration: none;
+}
+
 .banner-img-container{
     margin: 0 auto;
     height: 52vw;
@@ -127,6 +132,65 @@ p{
     width: 60%;
 }
 
+.page-title{
+    background-image: url(../dash-brown.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+    display: inline-block;
+    margin: 0;
+    padding: 0 0.3em 0.8em 0;
+}
+
+.event-row{
+    .event-card{
+        box-sizing: border-box;
+        display: flex;
+            align-items: center;
+            flex-direction: column;
+        margin: -7em auto 3em;
+        width: 75%;
+        .event-card-image-container{
+            display: block;
+            height: 55vw;
+            overflow: hidden;
+            transform: translateY(50%);
+            width: 55vw;
+            img{
+                display: block;
+                height: 100%;
+                object-fit: cover;
+                width: 100%;
+            }
+        }
+        .event-card-text{
+            background-color: $greenLight;
+            padding: 0 1.5em;
+            padding-top: calc(26.5vw + 2em);
+            .event-card-title{
+                text-transform: uppercase;
+            }
+            .event-card-date{
+                font-size: 0.8em;
+            }
+            .event-card-location{
+                font-size: 0.8em;
+                font-style: italic;
+            }
+            .event-card-link{
+                color: black;
+                display: block;
+                background-image: url(../dash-brown.png);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+                text-align: center;
+                transform: translateY(30%);
+            }
+        }
+    }
+}
+
 .main-content{
     margin: 1em auto 2em;
     width: 90%;
@@ -164,9 +228,9 @@ p{
     }
     a.registration-link:hover, a.registration-link:active{
         background-image: url(../dash-yellow.png);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: contain;
     }
     
 }
@@ -240,6 +304,10 @@ p{
 }
 
 @media only screen and (min-width: 1024px) {
+    
+    h1{
+        font-size: 2em;
+    }
     
     .image-logo{
         margin: 2em auto;
