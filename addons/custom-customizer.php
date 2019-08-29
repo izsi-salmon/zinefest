@@ -26,6 +26,10 @@ function custom_theme_customizer( $wp_customize ){
         'title' => __('Home Images', 'zinefestTheme')
     ));
     
+    $wp_customize->add_section('contact', array(
+        'title' => __('Contact', 'textdomain')
+    ));
+    
     // SETTINGS & CONTROLS
     
     // Example
@@ -126,14 +130,142 @@ function custom_theme_customizer( $wp_customize ){
        )
    );
     
+    // CONTACT
+    
+    // Email
+    
+    $wp_customize->add_setting('email_setting', array(
+        'default'   => '',
+        'sanitize_callback' => 'sanitize_email_address'
+    ));
+    
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'email_control',
+            array(
+                'label' => __('Email Address', 'zinefestTheme'),
+                'section' => 'contact',
+                'settings' => 'email_setting',
+                'type' => 'text'
+            )
+        )
+    );
+    
+    
+    $wp_customize->add_setting('email_icon_setting', array(
+        'default'   => '',
+        'transport' => 'refresh'
+    ));
+    
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+           $wp_customize,
+           'email_icon_control',
+           array(
+               'label'       => __('Email Icon', 'zinefestTheme'),
+               'description' => 'Add an email icon.',
+               'section'     => 'contact',
+               'settings'    => 'email_icon_setting'
+           )
+       )
+   );
+    
+    // Facebook
+    $wp_customize->add_setting('facebook_link_setting', array(
+        'default'   => '',
+        'sanitize_callback' => 'sanitize_facebook'
+    ));
+    
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'facebook_link_control',
+            array(
+                'label' => __('Facebook link', 'zinefestTheme'),
+                'section' => 'contact',
+                'settings' => 'facebook_link_setting',
+                'type' => 'text'
+            )
+        )
+    );
+    
+    
+    $wp_customize->add_setting('facebook_icon_setting', array(
+        'default'   => '',
+        'transport' => 'refresh'
+    ));
+    
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+           $wp_customize,
+           'facebook_icon_control',
+           array(
+               'label'       => __('Facebook Icon', 'zinefestTheme'),
+               'description' => 'Add a Facebook icon.',
+               'section'     => 'contact',
+               'settings'    => 'facebook_icon_setting'
+           )
+       )
+   );
+    
+    // Instagram
+    $wp_customize->add_setting('instagram_link_setting', array(
+        'default'   => '',
+        'sanitize_callback' => 'sanitize_instagram'
+    ));
+    
+    $wp_customize->add_control(
+        new WP_Customize_Control(
+            $wp_customize,
+            'instagram_link_control',
+            array(
+                'label' => __('Instagram link', 'zinefestTheme'),
+                'section' => 'contact',
+                'settings' => 'instagram_link_setting',
+                'type' => 'text'
+            )
+        )
+    );
+    
+    
+    $wp_customize->add_setting('instagram_icon_setting', array(
+        'default'   => '',
+        'transport' => 'refresh'
+    ));
+    
+    $wp_customize->add_control(
+        new WP_Customize_Image_Control(
+           $wp_customize,
+           'instagram_icon_control',
+           array(
+               'label'       => __('Instagram Icon', 'zinefestTheme'),
+               'description' => 'Add a Instagram icon.',
+               'section'     => 'contact',
+               'settings'    => 'instagram_icon_setting'
+           )
+       )
+   );
+    
     // SANITIZE TEXT
     
-    // Homepage text
-//	function sanitize_text( $sanitizeVariable ) {
+    function sanitize_email_address( $sanEmail ) {
+	    return sanitize_text_field( $sanEmail );
+	}
+    
+    function sanitize_facebook( $sanFacebook ) {
+	    return sanitize_text_field( $sanFacebook );
+	}
+    
+    function sanitize_instagram( $sanInstagram ) {
+	    return sanitize_text_field( $sanInstagram );
+	}
+    
+//	function sanitize_callback( $sanitizeVariable ) {
 //	    return sanitize_text_field( $sanitizeVariable );
 //	}
 //    
-//    function sanitize_text_area( $sanitizeVariable ) {
+//    function sanitize_callback( $sanitizeVariable ) {
 //	    return esc_textarea( $sanitizeVariable );
 //	}
     
