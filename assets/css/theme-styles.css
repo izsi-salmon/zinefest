@@ -34,11 +34,34 @@ p {
   font-size: 0.9em;
   margin-bottom: 0.7em; }
 
-.image-logo {
+.header .image-logo {
   margin: 1em auto;
   text-align: center; }
-  .image-logo img {
-    max-width: 125px; }
+  .header .image-logo img {
+    max-width: 150px; }
+.header .nav ul {
+  list-style: none;
+  text-transform: uppercase; }
+  .header .nav ul li {
+    display: inline-block; }
+    .header .nav ul li a {
+      color: black; }
+    .header .nav ul li a:hover, .header .nav ul li a:active {
+      background-image: url(../dash-brown.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain; }
+
+.header-mobile .nav ul {
+  display: flex;
+  justify-content: center;
+  font-size: 0.8em;
+  padding: 0.5em 0 0; }
+  .header-mobile .nav ul li {
+    padding: 0 0.7em; }
+
+.header-desktop {
+  display: none; }
 
 a:link, a:visited, a:hover, a:active {
   color: #5a917a;
@@ -81,7 +104,7 @@ a:link, a:visited, a:hover, a:active {
 
 .home-images {
   margin-left: 10vw;
-  padding-top: 2em; }
+  padding-top: 0.5em; }
   .home-images img {
     display: block;
     position: relative;
@@ -99,7 +122,7 @@ a:link, a:visited, a:hover, a:active {
 .colour-block-home {
   background-color: #fde784;
   position: absolute;
-  top: -3.5em;
+  top: -4.5em;
   bottom: 0;
   width: 60%; }
 
@@ -118,7 +141,7 @@ a:link, a:visited, a:hover, a:active {
     display: flex;
     align-items: center;
     flex-direction: column;
-    margin: -13.25vw auto 2em;
+    margin: -26.5vw auto 4em;
     line-height: 1.3em;
     width: 80%; }
     .flex-container .event-row .event-card .event-card-image-container {
@@ -209,74 +232,13 @@ a:link, a:visited, a:hover, a:active {
 
 @media only screen and (min-width: 360px) {
   .flex-container .event-row .event-card {
+    margin: -100px auto 2em;
     max-width: 300px; }
     .flex-container .event-row .event-card .event-card-image-container {
       max-height: 200px;
       max-width: 200px; }
     .flex-container .event-row .event-card .event-card-text {
       padding-top: calc(100px + 2em); } }
-/* alternate events menu layout
-@media only screen and (min-width: 411px) {
-    .flex-container{
-        .event-row{
-            .event-card{
-                background-color: $greenLight;
-                box-sizing: border-box;
-                display: flex;
-                    align-items: center;
-                    flex-direction: row-reverse;
-                margin: 1em 0 1em;
-                position: relative;
-                width: 80%;
-                .event-card-image-container{
-                    display: block;
-                    flex: none;
-                    height: 30vw;
-                    overflow: hidden;
-                    transform: translateY(0%) translateX(50%);
-                    width: 30vw;
-                    img{
-                        display: block;
-                        height: 100%;
-                        object-fit: cover;
-                        width: 100%;
-                    }
-                }
-                .event-card-text{
-                    flex: none;
-                    line-height: 1.3em;
-                    padding: 1em 1em 0;
-                p{
-                    margin-bottom: 0.2em;
-                }
-                .event-card-title{
-                    text-transform: uppercase;
-                }
-                .event-card-date{
-                    font-size: 0.8em;
-                }
-                .event-card-location{
-                    font-size: 0.8em;
-                    font-style: italic;
-                }
-                .event-card-link{
-                    color: black;
-                    display: inline-block;
-                    background-image: url(../dash-brown.png);
-                        background-position: left;
-                        background-repeat: no-repeat;
-                        background-size: cover;
-                    padding: 0 0.5em;
-                    text-align: left;
-                    transform: translateY(30%);
-                }
-            }
-            }
-        }
-    }
-    
-}
-*/
 @media only screen and (min-width: 568px) {
   .home-text-container .home-title {
     font-size: 3em;
@@ -300,8 +262,13 @@ a:link, a:visited, a:hover, a:active {
       transform: translateX(-6em) translateY(2em) rotateZ(-10deg);
       z-index: 3; } }
 @media only screen and (min-width: 768px) {
-  .image-logo img {
-    max-width: 170px; }
+  .header {
+    margin-bottom: 2em; }
+    .header .image-logo img {
+      max-width: 190px; }
+
+  .header-mobile .nav ul {
+    font-size: 0.9em; }
 
   .banner-link-container {
     font-size: 0.9em;
@@ -353,10 +320,29 @@ a:link, a:visited, a:hover, a:active {
   h1 {
     font-size: 2em; }
 
-  .image-logo {
-    margin: 2em auto; }
-    .image-logo img {
-      max-width: 200px; }
+  .header {
+    position: relative;
+    margin: 0 auto 1em;
+    width: 80%; }
+    .header .image-logo {
+      margin: 2em auto; }
+      .header .image-logo img {
+        max-width: 200px; }
+    .header .nav {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%); }
+      .header .nav ul li {
+        padding-left: 0.7em; }
+      .header .nav ul a {
+        padding: 0 0.4em; }
+
+  .header-mobile {
+    display: none; }
+
+  .header-desktop {
+    display: inherit; }
 
   .banner-img-container {
     height: 30vw;
@@ -443,7 +429,7 @@ a:link, a:visited, a:hover, a:active {
         .main-content .event-sidebar .registration p {
           margin-bottom: 0.3em; }
         .main-content .event-sidebar .registration .registration-link {
-          margin-left: 20%; }
+          margin-left: 10%; }
 
   .flex-container {
     margin: 0 auto 5em;
@@ -455,7 +441,7 @@ a:link, a:visited, a:hover, a:active {
         box-sizing: border-box;
         flex-basis: calc(25%);
         position: relative;
-        margin: 0 4% -2em;
+        margin: calc(-80px + 2em) 4% -2em;
         width: auto; }
         .flex-container .event-row .event-card .event-card-image-container {
           max-height: 160px;

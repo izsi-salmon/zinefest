@@ -37,6 +37,23 @@ $yellow: #fde784;     // 49 48 99
     font-style: italic;
 }
 
+@mixin highlight{
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+@mixin highlight-yellow{
+    background-image: url(../dash-yellow.png);
+    @include highlight;
+        
+}
+
+@mixin highlight-brown{
+    background-image: url(../dash-brown.png);
+    @include highlight;
+}
+
 *{
     font-family: 'Open Dyslexic';
     margin: 0;
@@ -52,12 +69,47 @@ p{
     margin-bottom: 0.7em;
 }
 
-.image-logo{
+.header{
+    .image-logo{
     margin: 1em auto;
     text-align: center;
-    img {
-        max-width: 125px;
+        img {
+            max-width: 150px;
+        }
     }
+    .nav{
+        ul{
+            list-style: none;
+            text-transform: uppercase;
+            li{
+                display: inline-block;
+                a{
+                    color: black;
+                }
+                a:hover, a:active{
+                    @include highlight-brown;
+                }
+            }
+        }
+    }
+}
+
+.header-mobile{
+    .nav{
+        ul{
+            display: flex;
+                justify-content: center;
+            font-size: 0.8em;
+            padding: 0.5em 0 0;
+            li{
+                padding: 0 0.7em;
+            }
+        }
+    }
+}
+
+.header-desktop{
+    display: none;
 }
 
 a:link, a:visited, a:hover, a:active{
@@ -109,7 +161,7 @@ a:link, a:visited, a:hover, a:active{
 
 .home-images{
     margin-left: 10vw;
-    padding-top: 2em;
+    padding-top: 0.5em;
     img{
         display: block;
         position: relative;
@@ -132,7 +184,7 @@ a:link, a:visited, a:hover, a:active{
 .colour-block-home{
     background-color: $yellow;
     position: absolute;
-        top: -3.5em;
+        top: -4.5em;
         bottom: 0;
     width: 60%;
 }
@@ -154,7 +206,7 @@ a:link, a:visited, a:hover, a:active{
             display: flex;
                 align-items: center;
                 flex-direction: column;
-            margin: -13.25vw auto 2em;
+            margin: -26.5vw auto 4em;
             line-height: 1.3em;
             width: 80%;
             .event-card-image-container{
@@ -262,10 +314,7 @@ a:link, a:visited, a:hover, a:active{
                 text-decoration: none;
             }
             a.registration-link:hover, a.registration-link:active{
-                background-image: url(../dash-yellow.png);
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: contain;
+                @include highlight-yellow;
             }
         }
     }
@@ -276,6 +325,7 @@ a:link, a:visited, a:hover, a:active{
     .flex-container{
         .event-row{
             .event-card{
+                margin: -100px auto 2em;
                 max-width: 300px;
                 .event-card-image-container{
                     max-height: 200px;
@@ -288,69 +338,6 @@ a:link, a:visited, a:hover, a:active{
         }
     }
 }
-
-/* alternate events menu layout
-@media only screen and (min-width: 411px) {
-    .flex-container{
-        .event-row{
-            .event-card{
-                background-color: $greenLight;
-                box-sizing: border-box;
-                display: flex;
-                    align-items: center;
-                    flex-direction: row-reverse;
-                margin: 1em 0 1em;
-                position: relative;
-                width: 80%;
-                .event-card-image-container{
-                    display: block;
-                    flex: none;
-                    height: 30vw;
-                    overflow: hidden;
-                    transform: translateY(0%) translateX(50%);
-                    width: 30vw;
-                    img{
-                        display: block;
-                        height: 100%;
-                        object-fit: cover;
-                        width: 100%;
-                    }
-                }
-                .event-card-text{
-                    flex: none;
-                    line-height: 1.3em;
-                    padding: 1em 1em 0;
-                p{
-                    margin-bottom: 0.2em;
-                }
-                .event-card-title{
-                    text-transform: uppercase;
-                }
-                .event-card-date{
-                    font-size: 0.8em;
-                }
-                .event-card-location{
-                    font-size: 0.8em;
-                    font-style: italic;
-                }
-                .event-card-link{
-                    color: black;
-                    display: inline-block;
-                    background-image: url(../dash-brown.png);
-                        background-position: left;
-                        background-repeat: no-repeat;
-                        background-size: cover;
-                    padding: 0 0.5em;
-                    text-align: left;
-                    transform: translateY(30%);
-                }
-            }
-            }
-        }
-    }
-    
-}
-*/
 
 @media only screen and (min-width: 568px) {
     
@@ -387,9 +374,24 @@ a:link, a:visited, a:hover, a:active{
 
 @media only screen and (min-width: 768px) {
     
-    .image-logo{
-        img {
-            max-width: 170px;
+    
+    .header{
+        margin-bottom: 2em;
+        .image-logo{
+            img {
+                max-width: 190px;
+            }
+        }
+    }
+    
+    .header-mobile{
+        .nav{
+            ul{
+                font-size: 0.9em;
+                li{
+                    
+                }
+            }
         }
     }
     
@@ -448,9 +450,6 @@ a:link, a:visited, a:hover, a:active{
                             left: 0;
                         text-align: center;
                         width: 100%;
-                        .event-card-link{
-//                            transform: translateY(30%);
-                        }
                     }
                     
                 }
@@ -466,11 +465,38 @@ a:link, a:visited, a:hover, a:active{
         font-size: 2em;
     }
     
-    .image-logo{
-        margin: 2em auto;
-        img {
-            max-width: 200px;
+    .header{
+        position: relative;
+        margin: 0 auto 1em;
+        width: 80%;
+        .image-logo{
+            margin: 2em auto;
+            img {
+                max-width: 200px;
+            }
         }
+        .nav{
+            position: absolute;
+                top: 50%;
+                right: 0;
+            transform: translateY(-50%);
+            ul{
+                li{
+                    padding-left: 0.7em;
+                }
+                a{
+                    padding: 0 0.4em;
+                }
+            }
+        }
+    }
+    
+    .header-mobile{
+        display: none;
+    }
+    
+    .header-desktop{
+        display: inherit;
     }
     
     .banner-img-container{
@@ -585,7 +611,7 @@ a:link, a:visited, a:hover, a:active{
                     margin-bottom: 0.3em;
                 }
                 .registration-link{
-                    margin-left: 20%;
+                    margin-left: 10%;
                 }
             }
         }
@@ -601,7 +627,7 @@ a:link, a:visited, a:hover, a:active{
                 box-sizing: border-box;
                 flex-basis: calc(25%);
                 position: relative;
-                margin: 0 4% -2em;
+                margin: calc(-80px + 2em) 4% -2em;
                 width: auto;
                 .event-card-image-container{
                     max-height: 160px;
