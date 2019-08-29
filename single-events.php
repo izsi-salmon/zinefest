@@ -23,31 +23,40 @@
         $regType3 =  get_post_meta( $id, 'type_3', true ); $regLink3 =  get_post_meta( $id, 'link_3', true );
     ?>
     <div class="main-content">
-        <h1><?= the_title(); ?></h1>
-        <div class="event-details">
-            <div><?= $eventDate ?></div>
-            <div><?= $eventStartTime ?> to <?= $eventEndTime ?></div>
-            <div><?= $eventLocation ?></div>
-        </div>
-        <p class="the-content"><?= get_the_content(); ?></p>
+        <h1 class="event-title"><?= the_title(); ?></h1>
         <?php if($regLink1 || $regLink2 || $regLink3): ?>
-            <div class="registration">
-                <div class="registration-title"><h2>Register</h2></div>
-                <div>
-                    <!--     Registration 1       -->
-                    <?php if($regLink1): ?>
-                        <p><a href="<?= $regLink1 ?>" target="_blank" class="registration-link"><span><?php if($regType1){echo $regType1;} else{echo $regLink1;} ?></span> <img src="<?php bloginfo('template_url'); ?>/assets/arrow.png" class="link-arrrow" alt="link arrow"></a></p>               
-                    <?php endif ?>
-                    <!--     Registration 2       -->
-                    <?php if($regLink2): ?>
-                        <p><a href="<?= $regLink2 ?>" target="_blank" class="registration-link"><span><?php if($regType2){echo $regType2;} else{echo $regLink2;} ?></span> <img src="<?php bloginfo('template_url'); ?>/assets/arrow.png" class="link-arrrow" alt="link arrow"></a></p>             
-                    <?php endif ?>
-                    <!--     Registration 3       -->
-                    <?php if($regLink3): ?>
-                        <p><a href="<?= $regLink3 ?>" target="_blank" class="registration-link"><span><?php if($regType3){echo $regType3;} else{echo $regLink3;} ?></span> <img src="<?php bloginfo('template_url'); ?>/assets/arrow.png" class="link-arrrow" alt="link arrow"></a></p>
-                    <?php endif ?>
+            <div class="event-sidebar">
+                <div class="event-details">
+                    <div><?= $eventDate ?></div>
+                    <div><?= $eventStartTime ?> to <?= $eventEndTime ?></div>
+                    <div><?= $eventLocation ?></div>
                 </div>
+                    <div class="registration">
+                        <div class="registration-title"><h2>Register</h2></div>
+                        <div>
+                            <!--     Registration 1       -->
+                            <?php if($regLink1): ?>
+                                <p><a href="<?= $regLink1 ?>" target="_blank" class="registration-link"><span><?php if($regType1){echo $regType1;} else{echo $regLink1;} ?></span> <img src="<?php bloginfo('template_url'); ?>/assets/arrow.png" class="link-arrrow" alt="link arrow"></a></p>               
+                            <?php endif ?>
+                            <!--     Registration 2       -->
+                            <?php if($regLink2): ?>
+                                <p><a href="<?= $regLink2 ?>" target="_blank" class="registration-link"><span><?php if($regType2){echo $regType2;} else{echo $regLink2;} ?></span> <img src="<?php bloginfo('template_url'); ?>/assets/arrow.png" class="link-arrrow" alt="link arrow"></a></p>             
+                            <?php endif ?>
+                            <!--     Registration 3       -->
+                            <?php if($regLink3): ?>
+                                <p><a href="<?= $regLink3 ?>" target="_blank" class="registration-link"><span><?php if($regType3){echo $regType3;} else{echo $regLink3;} ?></span> <img src="<?php bloginfo('template_url'); ?>/assets/arrow.png" class="link-arrrow" alt="link arrow"></a></p>
+                            <?php endif ?>
+                        </div>
+                    </div>
             </div>
+            <div class="the-content the-content-sidebar"><?= get_the_content(); ?></div>
+        <?php else: ?>
+            <div class="event-details">
+                <div><?= $eventDate ?></div>
+                <div><?= $eventStartTime ?> to <?= $eventEndTime ?></div>
+                <div><?= $eventLocation ?></div>
+            </div>
+            <div class="the-content"><?= get_the_content(); ?></div>
         <?php endif ?>
     </div>
 <?php endwhile; wp_reset_query(); ?>

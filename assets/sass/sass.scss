@@ -1,7 +1,12 @@
 /* COLOURS            RGB VALUES */
+
+/* OLD
+   $green: #078b62;      // 161 95 55
+   $greenLight: #b4dccf; // 161 18 86 */
+
 $brown: #e7d0ae;      // 36 25 91
-$green: #078b62;      // 161 95 55
-$greenLight: #b4dccf; // 161 18 86
+$green: #5a917a;      // 90 145 122
+$greenLight: #c9e1d4; // 201 225 212
 $yellow: #fde784;     // 49 48 99
 
 @font-face {
@@ -39,7 +44,7 @@ $yellow: #fde784;     // 49 48 99
 }
 
 h1{
-    font-size: 1.6em;
+    font-size: 1.8em;
 }
 
 p{
@@ -142,98 +147,210 @@ a:link, a:visited, a:hover, a:active{
     padding: 0 0.3em 0.8em 0;
 }
 
-.event-row{
-    .event-card{
-        box-sizing: border-box;
-        display: flex;
-            align-items: center;
-            flex-direction: column;
-        margin: -7em auto 3em;
-        width: 75%;
-        .event-card-image-container{
-            display: block;
-            height: 55vw;
-            overflow: hidden;
-            transform: translateY(50%);
-            width: 55vw;
-            img{
+.flex-container{
+    margin: 1em 0 5em;
+    .event-row{
+        .event-card{
+            display: flex;
+                align-items: center;
+                flex-direction: column;
+            margin: -13.25vw auto 2em;
+            line-height: 1.3em;
+            width: 80%;
+            .event-card-image-container{
                 display: block;
-                height: 100%;
-                object-fit: cover;
-                width: 100%;
+                height: 55vw;
+                overflow: hidden;
+                transform: translateY(50%);
+                width: 55vw;
+                img{
+                    display: block;
+                    height: 100%;
+                    object-fit: cover;
+                    width: 100%;
+                }
             }
-        }
-        .event-card-text{
-            background-color: $greenLight;
-            padding: 0 1.5em;
-            padding-top: calc(26.5vw + 2em);
-            .event-card-title{
-                text-transform: uppercase;
-            }
-            .event-card-date{
-                font-size: 0.8em;
-            }
-            .event-card-location{
-                font-size: 0.8em;
-                font-style: italic;
-            }
-            .event-card-link{
-                color: black;
-                display: block;
-                background-image: url(../dash-brown.png);
-                    background-position: center;
-                    background-repeat: no-repeat;
-                    background-size: contain;
-                text-align: center;
-                transform: translateY(30%);
+            .event-card-text{
+                background-color: $greenLight;
+                padding: 0 1.5em;
+                padding-top: calc(26.5vw + 2em);
+                .event-card-title{
+                    margin-bottom: 0.3em;
+                    text-transform: uppercase;
+                }
+                .event-card-date{
+                    font-size: 0.8em;
+                }
+                .event-card-location{
+                    font-size: 0.8em;
+                    font-style: italic;
+                }
+                .event-link-wrapper{
+                    .event-card-link{
+                        color: black;
+                        display: block;
+                        background-image: url(../dash-brown.png);
+                            background-position: center;
+                            background-repeat: no-repeat;
+                            background-size: contain;
+                        padding: 0.2em;
+                        text-align: center;
+                        transform: translateY(30%);
+                    }
+                }
+                    
             }
         }
     }
 }
 
+.no-events-text{
+    color: #999;
+    font-size: 0.85em;
+    margin: 0 auto;
+    text-align: center;
+    width: 90%;
+}
+
+
 .main-content{
     margin: 1em auto 2em;
     width: 90%;
+    .event-title{
+        margin-bottom: 0.5em;
+    }
     .event-details{
         background-image: url(../splotch-brown.png);
         background-repeat: no-repeat;
         background-size: cover;
         display: inline-block;
         font-size: 0.8em;
-        margin: 0.5em 0 1em;
+        margin-bottom: 2em;
         padding: 0.5em 1.5em;
     }
-    .registration-title{
-        background-color: $greenLight;
-        display: inline-block;
-        height: 1.6em;
-        margin: 2em 0 1em;
-        text-transform: uppercase;
-        h2{
-            transform: translate(20%, -50%);
+    .event-sidebar{
+        .registration{
+            display: flex;
+                align-items: center;
+            margin: 1em 0;
+            .registration-title{
+                background-color: $greenLight;
+                display: inline-block;
+                height: 1.3em;
+                margin: 3em 0.5em 3em 0;
+                transform: rotateZ(-45deg);
+                text-transform: uppercase;
+                h2{
+                    font-size: 1.1em;
+                    transform: translate(20%, -50%);
+                }
+            }
+            p{
+                margin-bottom: 0.2em;
+            }
+            .registration-link{
+                display: inline-flex;
+                    align-items: center;
+                padding-right: 0.25em;
+                .link-arrrow{
+                    height: 1em;
+                    margin-left: 0.3em;
+                }
+            }
+            a.registration-link:link, a.registration-link:visited, a.registration-link:active, a.registration-link:hover{
+                color: black;
+                text-decoration: none;
+            }
+            a.registration-link:hover, a.registration-link:active{
+                background-image: url(../dash-yellow.png);
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    background-size: contain;
+            }
         }
-    }
-    .registration-link{
-        display: inline-flex;
-            align-items: center;
-        padding-right: 0.25em;
-        .link-arrrow{
-            height: 1em;
-            margin-left: 0.3em;
-        }
-    }
-    a.registration-link:link, a.registration-link:visited, a.registration-link:active, a.registration-link:hover{
-        color: black;
-        text-decoration: none;
-    }
-    a.registration-link:hover, a.registration-link:active{
-        background-image: url(../dash-yellow.png);
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: contain;
     }
     
 }
+
+@media only screen and (min-width: 360px){
+    .flex-container{
+        .event-row{
+            .event-card{
+                max-width: 300px;
+                .event-card-image-container{
+                    max-height: 200px;
+                    max-width: 200px;
+                }
+                .event-card-text{
+                    padding-top: calc(100px + 2em);
+                }
+            }
+        }
+    }
+}
+
+/* alternate events menu layout
+@media only screen and (min-width: 411px) {
+    .flex-container{
+        .event-row{
+            .event-card{
+                background-color: $greenLight;
+                box-sizing: border-box;
+                display: flex;
+                    align-items: center;
+                    flex-direction: row-reverse;
+                margin: 1em 0 1em;
+                position: relative;
+                width: 80%;
+                .event-card-image-container{
+                    display: block;
+                    flex: none;
+                    height: 30vw;
+                    overflow: hidden;
+                    transform: translateY(0%) translateX(50%);
+                    width: 30vw;
+                    img{
+                        display: block;
+                        height: 100%;
+                        object-fit: cover;
+                        width: 100%;
+                    }
+                }
+                .event-card-text{
+                    flex: none;
+                    line-height: 1.3em;
+                    padding: 1em 1em 0;
+                p{
+                    margin-bottom: 0.2em;
+                }
+                .event-card-title{
+                    text-transform: uppercase;
+                }
+                .event-card-date{
+                    font-size: 0.8em;
+                }
+                .event-card-location{
+                    font-size: 0.8em;
+                    font-style: italic;
+                }
+                .event-card-link{
+                    color: black;
+                    display: inline-block;
+                    background-image: url(../dash-brown.png);
+                        background-position: left;
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                    padding: 0 0.5em;
+                    text-align: left;
+                    transform: translateY(30%);
+                }
+            }
+            }
+        }
+    }
+    
+}
+*/
 
 @media only screen and (min-width: 568px) {
     
@@ -293,11 +410,51 @@ a:link, a:visited, a:hover, a:active{
         }
     }
     
+    .no-events-text{
+        width: 80%;
+    }
+    
     .main-content{
         margin: 2.5em auto 3em;
+    }
+    
+    .flex-container{
+        margin: 2em auto 5em;
         width: 80%;
-        .event-details{
-            margin: 0.7em 0 1.5em;
+        .event-row{
+            display: flex;
+                flex-flow: row wrap;
+                justify-content: flex-start;
+            margin-top: calc(-100px);
+            .event-card{
+                box-sizing: border-box;
+                flex-basis: calc(45%);
+                font-size: 0.9em;
+                margin: 0 2.5% -2em;
+                max-width: none;
+                width: auto;
+                .event-card-image-container{
+                    position: relative;
+                    z-index: 1;
+                }
+                .event-card-text{
+                    flex: 1 0 auto;
+                    padding: 0 1.5em 1.5em;
+                    padding-top: calc(100px + 2em);
+                    position: relative;
+                    .event-link-wrapper{
+                        position: absolute;
+                            bottom: 0;
+                            left: 0;
+                        text-align: center;
+                        width: 100%;
+                        .event-card-link{
+//                            transform: translateY(30%);
+                        }
+                    }
+                    
+                }
+            }
         }
     }
     
@@ -395,22 +552,69 @@ a:link, a:visited, a:hover, a:active{
         }
     }
     
+    .no-events-text{
+        width: 60%;
+    }
+    
     .main-content{
         margin: 3em auto 4.5em;
         width: 60%;
         .event-details{
-            margin: 1em 0 2em;
+            align-self: flex-start;
         }
-        .registration{
+        .the-content-sidebar{
+            width: 70%;
+        }
+        .event-sidebar{
             display: flex;
-            margin-top: 5.5em;
-            .registration-title{
-                margin: 1em 0 0 0;
-                transform: rotateZ(-45deg) translateX(1em);
+                flex-direction: column;
+            float: right;
+            margin-left: 3em;
+            .registration{
+                align-self: flex-start;
+                display: inline-block;
+                .registration-title{
+                    height: 1.6em;
+                    margin: 1em 0 1em;
+                    transform: rotateZ(0);
+                    h2{
+                        font-size: 1.4em;
+                    }
+                }
+                p{
+                    margin-bottom: 0.3em;
+                }
+                .registration-link{
+                    margin-left: 20%;
+                }
             }
         }
     }
     
+    .flex-container{
+        margin: 0 auto 5em;
+        min-width: 900px;
+        width: 60%;
+        .event-row{
+            margin-top: -75px;
+            .event-card{
+                box-sizing: border-box;
+                flex-basis: calc(25%);
+                position: relative;
+                margin: 0 4% -2em;
+                width: auto;
+                .event-card-image-container{
+                    max-height: 160px;
+                    max-width: 160px;
+                }
+                .event-card-text{
+                    padding-top: calc(75px + 2em);
+                    .event-card-link{
+                    }
+                }
+            }
+        }
+    }
 
 }
 

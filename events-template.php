@@ -25,57 +25,33 @@
 </div>
    
     <?php if( $events->have_posts() ): ?>
+        <div class="flex-container">
 
-       <?php if(sizeof($events->posts) < 3): ?>
+               <div class="event-row">
+                    <?php while($events->have_posts()): $events->the_post(); ?>
+                       <?php 
+                        $eventSummary =  get_post_meta( $id, 'event_summary', true );
+                        $eventLocation =  get_post_meta( $id, 'event_location', true );
+                        $eventDate =  get_post_meta( $id, 'event_date', true );
+                        ?>
 
-          <div class="event-row event-row-centered">
-                <?php while($events->have_posts()): $events->the_post(); ?>
-                   <?php 
-                    $eventLocation =  get_post_meta( $id, 'event_location', true );
-                    $eventDate =  get_post_meta( $id, 'event_date', true );
-                    ?>
-                   
-                    <div class="event-card">
-                        <a class="event-card-image-container"><img src="<?= esc_url(get_the_post_thumbnail_url()) ?>"></a>
-                        <div class="event-card-text">
-                            <h4 class="event-card-title"><a href="<?= esc_url(get_permalink()) ?>"><?= the_title(); ?></a></h4>
-                            <p class="event-card-date"><?= $eventDate ?></p>
-                            <div class="event-card-description"><?= $eventSummary ?></div>
-                            <p class="event-card-location"><?= $eventLocation ?></p>
-                            <a href="<?= esc_url(get_permalink()) ?>">Discover more</a>
+                       <div class="event-card">
+                            <a class="event-card-image-container"><?php the_post_thumbnail('medium'); ?></a>
+                            <div class="event-card-text">
+                                <h4 class="event-card-title"><a href="<?= esc_url(get_permalink()) ?>"><?= the_title(); ?></a></h4>
+                                <p class="event-card-date"><?= $eventDate ?></p>
+                                <p class="event-card-description"><?= $eventSummary ?></p>
+                                <p class="event-card-location"><?= $eventLocation ?></p>
+                                <div class="event-link-wrapper"><a class="event-card-link" href="<?= esc_url(get_permalink()) ?>">Discover more</a></div>
+                            </div>
                         </div>
-                    </div>
-                    
-                <?php endwhile; ?>
+
+                    <?php endwhile; ?>
+                </div>
+                
             </div>
-
-       <?php else: ?>
-
-           <div class="event-row">
-                <?php while($events->have_posts()): $events->the_post(); ?>
-                   <?php 
-                    $eventSummary =  get_post_meta( $id, 'event_summary', true );
-                    $eventLocation =  get_post_meta( $id, 'event_location', true );
-                    $eventDate =  get_post_meta( $id, 'event_date', true );
-                    ?>
-                   
-                   <div class="event-card">
-                        <a class="event-card-image-container"><?php the_post_thumbnail('medium'); ?></a>
-                        <div class="event-card-text">
-                            <h4 class="event-card-title"><a href="<?= esc_url(get_permalink()) ?>"><?= the_title(); ?></a></h4>
-                            <p class="event-card-date"><?= $eventDate ?></p>
-                            <p class="event-card-description"><?= $eventSummary ?></p>
-                            <p class="event-card-location"><?= $eventLocation ?></p>
-                            <a class="event-card-link" href="<?= esc_url(get_permalink()) ?>">Discover more</a>
-                        </div>
-                    </div>
-                    
-                <?php endwhile; ?>
-            </div>
-
-       <?php endif; ?>
-    <?php else: ?>
-        <p class="no-events-text">There are currently no events coming up, check out our facebook and instagram to see our previous events.</p>
+        <?php else: ?>
+            <div class="no-events-text"><p>There are currently no events coming up, check out our facebook and instagram to see previous events.</p></div>
     <?php endif; ?>
 
 
