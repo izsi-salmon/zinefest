@@ -337,6 +337,47 @@ a:link, a:visited, a:hover, a:active {
         padding-left: 0.7em; }
       .header .nav ul a {
         padding: 0 0.4em; }
+    .header .contact {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%); }
+      .header .contact .contact-icons {
+        display: flex;
+        align-items: center; }
+        .header .contact .contact-icons .email-icon-wrapper {
+          position: relative; }
+          .header .contact .contact-icons .email-icon-wrapper .email-text {
+            background-color: #fde784;
+            opacity: 0;
+            padding: 0.5em 0.7em;
+            pointer-events: none;
+            position: absolute;
+            bottom: -107%;
+            left: 50%;
+            transform: translate(-50%, -75%);
+            transition: 0.5s; }
+        .header .contact .contact-icons .email-icon-wrapper:hover .email-text {
+          opacity: 1;
+          pointer-events: all;
+          transform: translate(-50%, 0); }
+        .header .contact .contact-icons .email-icon-wrapper:hover .email-text::before {
+          content: "";
+          position: absolute;
+          bottom: 100%;
+          left: 50%;
+          margin-left: -10px;
+          border-width: 10px;
+          border-style: solid;
+          border-color: transparent transparent #fde784 transparent; }
+        .header .contact .contact-icons .contact-icon {
+          margin-right: 0.7em; }
+          .header .contact .contact-icons .contact-icon img {
+            max-height: 42px;
+            max-width: 42px;
+            transition: 1s; }
+        .header .contact .contact-icons .contact-icon:hover img {
+          transform: rotate(340deg); }
 
   .header-mobile {
     display: none; }
@@ -356,6 +397,12 @@ a:link, a:visited, a:hover, a:active {
     margin: 2em auto;
     transform: translateY(0);
     width: 60%; }
+    .banner-link-container .banner-link {
+      display: inline-block;
+      transform: scale(1) rotate(0);
+      transition: 0.5s; }
+    .banner-link-container .banner-link:hover {
+      transform: scale(1.03) rotate(2deg); }
 
   .home-content {
     display: flex;
@@ -408,6 +455,8 @@ a:link, a:visited, a:hover, a:active {
   .main-content {
     margin: 3em auto 4.5em;
     width: 60%; }
+    .main-content .events-content {
+      margin-bottom: 6.5em; }
     .main-content .event-details {
       align-self: flex-start; }
     .main-content .the-content-sidebar {

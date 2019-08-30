@@ -21,7 +21,11 @@
 
 <div class="main-content">
     <h1 class="page-title"><?php the_title(); ?></h1>
-    <?= $content ?>
+        <?php if($content !== ''): ?>
+            <div class="events-content">
+                <?= $content ?>
+            </div>
+        <?php endif; ?>
 </div>
    
     <?php if( $events->have_posts() ): ?>

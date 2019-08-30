@@ -13,14 +13,14 @@
 
 <?php while(have_posts()) : the_post(); ?>
     <?php
-        $eventLocation =  get_post_meta( $id, 'event_location', true );
-        $eventDate =  get_post_meta( $id, 'event_date', true );
-        $eventStartTime =  get_post_meta( $id, 'event_start', true );
-        $eventEndTime =  get_post_meta( $id, 'event_end', true );
+        $eventLocation  = get_post_meta( $id, 'event_location', true );
+        $eventDate      = get_post_meta( $id, 'event_date', true );
+        $eventStartTime = get_post_meta( $id, 'event_start', true );
+        $eventEndTime   = get_post_meta( $id, 'event_end', true );
 
         $regType1 = get_post_meta( $id, 'type_1', true ); $regLink1 = get_post_meta( $id, 'link_1', true );
-        $regType2 =  get_post_meta( $id, 'type_2', true ); $regLink2 =  get_post_meta( $id, 'link_2', true );
-        $regType3 =  get_post_meta( $id, 'type_3', true ); $regLink3 =  get_post_meta( $id, 'link_3', true );
+        $regType2 = get_post_meta( $id, 'type_2', true ); $regLink2 =  get_post_meta( $id, 'link_2', true );
+        $regType3 = get_post_meta( $id, 'type_3', true ); $regLink3 =  get_post_meta( $id, 'link_3', true );
     ?>
     <div class="main-content">
         <h1 class="event-title"><?= the_title(); ?></h1>

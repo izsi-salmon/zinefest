@@ -489,6 +489,60 @@ a:link, a:visited, a:hover, a:active{
                 }
             }
         }
+        .contact{
+            position: absolute;
+                top: 50%;
+                left: 0;
+            transform: translateY(-50%);
+            .contact-icons{
+                display: flex;
+                    align-items: center;
+                .email-icon-wrapper{
+                    position: relative;
+                    .email-text{
+                        background-color: $yellow;
+                        opacity: 0;
+                        padding: 0.5em 0.7em;
+                        pointer-events: none;
+                        position: absolute;
+                            bottom: -107%;
+                            left: 50%;
+                        transform: translate(-50%, -75%);
+                        transition: 0.5s;
+                    }
+                }
+                .email-icon-wrapper:hover{
+                    .email-text{
+                        opacity: 1;
+                        pointer-events: all;
+                        transform: translate(-50%, 0);
+                    }
+                    .email-text::before{
+                        content: "";
+                        position: absolute;
+                        bottom: 100%;
+                        left: 50%;
+                        margin-left: -10px;
+                        border-width: 10px;
+                        border-style: solid;
+                        border-color: transparent transparent $yellow transparent;
+                    }
+                }
+                .contact-icon{
+                    margin-right: 0.7em;
+                    img{
+                        max-height: 42px;
+                        max-width: 42px;
+                        transition: 1s;
+                    }
+                }
+                .contact-icon:hover {
+                    img{
+                        transform: rotate(340deg);
+                    }
+                }
+            }
+        }
     }
     
     .header-mobile{
@@ -515,6 +569,14 @@ a:link, a:visited, a:hover, a:active{
         margin: 2em auto;
         transform: translateY(0);
         width: 60%;
+        .banner-link{
+            display: inline-block;
+            transform: scale(1) rotate(0);
+            transition: 0.5s;
+        }
+        .banner-link:hover{
+            transform: scale(1.03) rotate(2deg);
+        }
     }
     
     .home-content{
@@ -585,6 +647,9 @@ a:link, a:visited, a:hover, a:active{
     .main-content{
         margin: 3em auto 4.5em;
         width: 60%;
+        .events-content{
+            margin-bottom: 6.5em;
+        }
         .event-details{
             align-self: flex-start;
         }
