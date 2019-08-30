@@ -4,10 +4,10 @@
    $green: #078b62;      // 161 95 55
    $greenLight: #b4dccf; // 161 18 86 */
 
-$brown: #e7d0ae;      // 36 25 91
-$green: #5a917a;      // 90 145 122
-$greenLight: #c9e1d4; // 201 225 212
-$yellow: #fde784;     // 49 48 99
+$brown: #e7d0ae;      // 231, 208, 174
+$green: #5a917a;      // 90, 145, 122
+$greenLight: #c9e1d4; // 201, 225, 212
+$yellow: #fde784;     // 253, 231, 132
 
 @font-face {
     font-family: 'Open Dyslexic';
@@ -74,7 +74,8 @@ p{
     margin: 1em auto;
     text-align: center;
         img {
-            max-width: 150px;
+            max-height: 170px;
+            max-width: 170px;
         }
     }
     .nav{
@@ -100,7 +101,7 @@ p{
             display: flex;
                 justify-content: center;
             font-size: 0.8em;
-            padding: 0.5em 0 0;
+            padding: 0.7em 0 0;
             li{
                 padding: 0 0.7em;
             }
@@ -161,7 +162,7 @@ a:link, a:visited, a:hover, a:active{
 
 .home-images{
     margin-left: 10vw;
-    padding-top: 0.5em;
+    padding: 0.5em 0 1em;
     img{
         display: block;
         position: relative;
@@ -321,6 +322,34 @@ a:link, a:visited, a:hover, a:active{
     
 }
 
+.footer-overlay{
+    background-image: url(../paper-texture.jpg);
+        background-size: cover;
+    .footer{
+        background-color: rgba(231, 208, 174, 0.4);
+        display: flex;
+            flex-direction: column-reverse;
+            align-items: center;
+            text-align: center;
+        padding: 1.5em;
+        .email-collumn{
+            p{
+                margin-bottom: 0;
+            }
+        }
+        .social-media-collumn{
+            margin-bottom: 0.5em;
+            .contact-icon{
+                margin: 0 0.5em;
+                img{
+                    max-height: 42px;
+                    max-width: 42px;
+                }
+            }
+        }
+    }
+}
+
 @media only screen and (min-width: 360px){
     .flex-container{
         .event-row{
@@ -351,7 +380,7 @@ a:link, a:visited, a:hover, a:active{
     .home-images{
         display: flex;
         margin: 0 auto;
-        padding: 3.5em 0 5.5em 0;
+        padding: 3.5em 0 7.5em 0;
         width: 100%;
         img{
             max-width: 33%;
@@ -388,9 +417,7 @@ a:link, a:visited, a:hover, a:active{
         .nav{
             ul{
                 font-size: 0.9em;
-                li{
-                    
-                }
+                margin: 1em 0;
             }
         }
     }
@@ -454,6 +481,12 @@ a:link, a:visited, a:hover, a:active{
                     
                 }
             }
+        }
+    }
+    
+    .footer-overlay{
+        .footer{
+            padding: 2em;
         }
     }
     
@@ -706,14 +739,12 @@ a:link, a:visited, a:hover, a:active{
             }
         }
     }
+    
+    .footer-overlay{
+        display: none;
+    }
+
 
 }
-
-
-
-
-
-
-
 
 /* END */

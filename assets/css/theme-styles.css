@@ -38,7 +38,8 @@ p {
   margin: 1em auto;
   text-align: center; }
   .header .image-logo img {
-    max-width: 150px; }
+    max-height: 170px;
+    max-width: 170px; }
 .header .nav ul {
   list-style: none;
   text-transform: uppercase; }
@@ -56,7 +57,7 @@ p {
   display: flex;
   justify-content: center;
   font-size: 0.8em;
-  padding: 0.5em 0 0; }
+  padding: 0.7em 0 0; }
   .header-mobile .nav ul li {
     padding: 0 0.7em; }
 
@@ -104,7 +105,7 @@ a:link, a:visited, a:hover, a:active {
 
 .home-images {
   margin-left: 10vw;
-  padding-top: 0.5em; }
+  padding: 0.5em 0 1em; }
   .home-images img {
     display: block;
     position: relative;
@@ -230,6 +231,26 @@ a:link, a:visited, a:hover, a:active {
       background-repeat: no-repeat;
       background-size: contain; }
 
+.footer-overlay {
+  background-image: url(../paper-texture.jpg);
+  background-size: cover; }
+  .footer-overlay .footer {
+    background-color: rgba(231, 208, 174, 0.4);
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+    padding: 1.5em; }
+    .footer-overlay .footer .email-collumn p {
+      margin-bottom: 0; }
+    .footer-overlay .footer .social-media-collumn {
+      margin-bottom: 0.5em; }
+      .footer-overlay .footer .social-media-collumn .contact-icon {
+        margin: 0 0.5em; }
+        .footer-overlay .footer .social-media-collumn .contact-icon img {
+          max-height: 42px;
+          max-width: 42px; }
+
 @media only screen and (min-width: 360px) {
   .flex-container .event-row .event-card {
     margin: -100px auto 2em;
@@ -247,7 +268,7 @@ a:link, a:visited, a:hover, a:active {
   .home-images {
     display: flex;
     margin: 0 auto;
-    padding: 3.5em 0 5.5em 0;
+    padding: 3.5em 0 7.5em 0;
     width: 100%; }
     .home-images img {
       max-width: 33%;
@@ -268,7 +289,8 @@ a:link, a:visited, a:hover, a:active {
       max-width: 190px; }
 
   .header-mobile .nav ul {
-    font-size: 0.9em; }
+    font-size: 0.9em;
+    margin: 1em 0; }
 
   .banner-link-container {
     font-size: 0.9em;
@@ -315,7 +337,10 @@ a:link, a:visited, a:hover, a:active {
             bottom: 0;
             left: 0;
             text-align: center;
-            width: 100%; } }
+            width: 100%; }
+
+  .footer-overlay .footer {
+    padding: 2em; } }
 @media only screen and (min-width: 1024px) {
   h1 {
     font-size: 2em; }
@@ -496,7 +521,10 @@ a:link, a:visited, a:hover, a:active {
           max-height: 160px;
           max-width: 160px; }
         .flex-container .event-row .event-card .event-card-text {
-          padding-top: calc(75px + 2em); } }
+          padding-top: calc(75px + 2em); }
+
+  .footer-overlay {
+    display: none; } }
 /* END */
 
 /*# sourceMappingURL=theme-styles.css.map */
