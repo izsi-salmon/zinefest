@@ -333,8 +333,11 @@ a:link, a:visited, a:hover, a:active{
             text-align: center;
         padding: 1.5em;
         .email-collumn{
-            p{
+            .email-text{
                 margin-bottom: 0;
+                a{
+                    color: black;
+                }
             }
         }
         .social-media-collumn{
@@ -542,6 +545,9 @@ a:link, a:visited, a:hover, a:active{
                             left: 50%;
                         transform: translate(-50%, -75%);
                         transition: 0.5s;
+                        a{
+                           color: black;
+                        }
                     }
                 }
                 .email-icon-wrapper:hover{

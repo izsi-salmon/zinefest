@@ -62,8 +62,8 @@
                 
                 <?php if($email): ?>
                     <div class="email-icon-wrapper contact-icon">
-                        <img src="<?= $emailIcon ?>" class="email-icon" alt="Email icon">
-                        <p class="email-text"><?= $email ?></p>
+                        <a href="mailto:<?= $email ?>"><img src="<?= $emailIcon ?>" class="email-icon" alt="Email icon"></a>
+                        <p class="email-text"><a href="mailto:<?= $email ?>"><?= $email ?></a></p>
                     </div>
                 <?php endif; ?>
             </div>

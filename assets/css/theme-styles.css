@@ -241,8 +241,10 @@ a:link, a:visited, a:hover, a:active {
     align-items: center;
     text-align: center;
     padding: 1.5em; }
-    .footer-overlay .footer .email-collumn p {
+    .footer-overlay .footer .email-collumn .email-text {
       margin-bottom: 0; }
+      .footer-overlay .footer .email-collumn .email-text a {
+        color: black; }
     .footer-overlay .footer .social-media-collumn {
       margin-bottom: 0.5em; }
       .footer-overlay .footer .social-media-collumn .contact-icon {
@@ -382,6 +384,8 @@ a:link, a:visited, a:hover, a:active {
             left: 50%;
             transform: translate(-50%, -75%);
             transition: 0.5s; }
+            .header .contact .contact-icons .email-icon-wrapper .email-text a {
+              color: black; }
         .header .contact .contact-icons .email-icon-wrapper:hover .email-text {
           opacity: 1;
           pointer-events: all;

@@ -16,7 +16,7 @@
             <div class="footer">
                 <div class="email-collumn">
                     <?php if($email): ?>
-                        <p class="email-text"><?= $email ?></p>
+                        <p class="email-text"><a href="mailto:<?= $email ?>"><?= $email ?></a></p>
                     <?php endif; ?>
                 </div>
                <?php if($facebookLink || $instagramLink): ?>
