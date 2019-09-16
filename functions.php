@@ -92,8 +92,8 @@ add_filter( 'nav_menu_link_attributes', function ( $atts, $item, $args ) {
 
 function add_events_post_type(){
     $labels = array(
-        'name' => _x('events', 'post type name', 'zinefestTheme'),
-        'singular_name' => _x('event', 'post type singular name', 'zinefestTheme'),
+        'name' => _x('Events', 'post type name', 'zinefestTheme'),
+        'singular_name' => _x('Event', 'post type singular name', 'zinefestTheme'),
         'add_new_item' => _x('Add event', 'Adding event', 'zinefestTheme')
     );
     
@@ -105,7 +105,7 @@ function add_events_post_type(){
         'show_ui' => true,
         'show_in_menu' => true,
         'show_in_nav_menus' => false,
-        'menu_position' => '1',
+        'menu_position' => '',
         'menu_icon' => 'dashicons-calendar-alt',
         'supports' => array(
             'title',
@@ -117,8 +117,81 @@ function add_events_post_type(){
     register_post_type('events', $args);
 }
 
+function add_archives_post_type(){
+    $labels = array(
+        'name' => _x('Archives', 'post type name', 'zinefestTheme'),
+        'singular_name' => _x('Archive', 'post type singular name', 'zinefestTheme'),
+        'add_new_item' => _x('Add archive', 'Adding archive', 'zinefestTheme')
+    );
+    
+    $args = array(
+        'labels' => $labels,
+        'description' => 'Post type that adds an event archive',
+        'public' => true,
+        'hierarchical' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_nav_menus' => false,
+        'menu_position' => '',
+        'menu_icon' => 'dashicons-book-alt',
+        'supports' => array(
+            'title',
+            'thumbnail'
+        ),
+        'query_var' => true
+    );
+    register_post_type('archives', $args);
+}
+
+function conditional_post_type(){
+    $getArchivesArgs = array(
+    'post_type' => 'archives',
+    'posts_per_page' => -1
+    );
+    $getArchives = new WP_Query($getArchivesArgs);
+    if( $getArchives->have_posts() ){
+        
+        while($getArchives->have_posts()): $getArchives->the_post();
+            $title = get_the_title();
+            add_gallery_post_type($title);
+        endwhile;
+            
+    }
+    
+}
+
+function add_gallery_post_type($archiveTitle){
+    $labels = array(
+        'name' => _x($archiveTitle, 'post type name', 'zinefestTheme'),
+        'singular_name' => _x($archiveTitle, 'post type singular name', 'zinefestTheme'),
+        'add_new_item' => _x('Add work to '.$archiveTitle, 'Adding work', 'zinefestTheme')
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'description' => 'Post type that adds work to a specific archive',
+        'public' => true,
+        'hierarchical' => true,
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_nav_menus' => false,
+        'menu_position' => '',
+        'menu_icon' => 'dashicons-images-alt',
+        'supports' => array(
+            'title',
+            'thumbnail'
+        ),
+        'query_var' => true
+    );
+    register_post_type($archiveTitle, $args);
+}
+
+add_action('init','add_gallery_post_type');
+
 // ----- ADD POST TYPES ------
 add_action('init','add_events_post_type');
+add_action('init','add_archives_post_type');
+add_action('init','conditional_post_type');
 // ----- REMOVE ACTIONS -----
 // Stop wordpress from rendering two meta descriptions
 //remove_action('wp_head', 'description');

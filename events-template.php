@@ -19,7 +19,7 @@
     $events = new WP_Query($eventArgs);
 ?>
 
-<div class="main-content">
+<div class="main-content events-main-content">
     <h1 class="page-title"><?php the_title(); ?></h1>
         <?php if($content !== ''): ?>
             <div class="events-content">
@@ -40,7 +40,13 @@
                         ?>
 
                        <div class="event-card">
-                            <a class="event-card-image-container"><?php the_post_thumbnail('medium'); ?></a>
+                           <div class="event-menu-item-staples">
+                              <a class="event-card-image-container"><?php the_post_thumbnail('medium'); ?></a>
+                               <img src="<?php bloginfo('template_url'); ?>/assets/staple.png" alt="staple" class="staple staple-top-left">
+                               <img src="<?php bloginfo('template_url'); ?>/assets/staple.png" alt="staple" class="staple staple-top-right">
+                               <img src="<?php bloginfo('template_url'); ?>/assets/staple.png" alt="staple" class="staple staple-bottom-left">
+                               <img src="<?php bloginfo('template_url'); ?>/assets/staple.png" alt="staple" class="staple staple-bottom-right">
+                           </div>
                             <div class="event-card-text">
                                 <h4 class="event-card-title"><a href="<?= esc_url(get_permalink()) ?>"><?= the_title(); ?></a></h4>
                                 <p class="event-card-date"><?= $eventDate ?></p>

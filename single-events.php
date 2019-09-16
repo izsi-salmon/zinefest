@@ -61,5 +61,4 @@
     </div>
 <?php endwhile; wp_reset_query(); ?>
 
-
 <?php get_footer(); ?>

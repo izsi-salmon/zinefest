@@ -118,6 +118,22 @@
               'type' => 'default'
           )
         )
+      ),
+      'additional_paragraph' => array(
+          'title' => __('Add an additional paragraph', 'zinefestTheme'),
+      'applicableto' => 'page',
+      'location' => 'normal',
+      'priority' => 'high',
+      'fields' => array(
+          'add_parag_title' => array(
+              'title' => __('Additional Paragraph title', 'zinefestTheme'),
+              'type' => 'add_text'
+          ),
+          'add_parag' => array(
+              'title' => __('Additional paragraph content', 'zinefestTheme'),
+              'type' => 'add_textarea'
+          )
+        )
       )
     
 );
@@ -153,6 +169,20 @@ function show_metaboxes( $post, $args ) {
                         $output .= '<div class="form-group"><label for="' . $id . '">' . $field['title'] . '</label></br><input type="checkbox" name="' . $id . '" value="featured"> </div>'. $postTitle .'<br>';
                       }
                 break;
+                case 'add_text':
+                    if('about-template.php' == get_post_meta( $post->ID, '_wp_page_template', true )){
+                        $output .= '<div class="form-group"><label for="' . $id . '">' . $field['title'] . '</label><input class="customInput" id="' . $id . '" type="text" name="' . $id . '" value="' . $custom[$id][0] . '" style="width: 100%;margin-top:10px;margin-bottom:10px;" /></div>';
+                    }
+                break;
+                case 'add_textarea':
+                    if('about-template.php' == get_post_meta( $post->ID, '_wp_page_template', true )){
+                        $output .= '<div class="form-group"><label for="' . $id . '">' . $field['title'] . '</label><textarea class="customInput" id="' . $id . '" name="' . $id . '" style="width: 100%;margin-top:10px;margin-bottom:20px;height:150px;" />' . $custom[$id][0] . '</textarea></div>';
+                    } else{
+                        $output .= '<p>No additional paragraph can be added on this page template.</p>';
+                    }
+                break;
+                case 'gallery':
+                    $output .= '<div class="form-group"><label for="' . $id . '">' . $field['title'] . '</label><input class="customInput" id="' . $id . '" type="text" name="' . $id . '" value="' . $custom[$id][0] . '" style="width: 100%;" /></div>';
                 default:
                     $output .= '<div class="form-group"><label for="' . $id . '">' . $field['title'] . '</label><input class="customInput" id="' . $id . '" type="text" name="' . $id . '" value="' . $custom[$id][0] . '" style="width: 100%;" /></div>';
                 break;

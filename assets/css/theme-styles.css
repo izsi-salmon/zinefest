@@ -30,9 +30,35 @@
 h1 {
   font-size: 1.8em; }
 
+h2 {
+  font-size: 1.4em;
+  margin-bottom: 0.2em; }
+
 p {
   font-size: 0.9em;
   margin-bottom: 0.7em; }
+
+.staple {
+  position: absolute; }
+
+.staple-top-left {
+  top: -5px;
+  left: -5px; }
+
+.staple-top-right {
+  top: -5px;
+  right: -5px;
+  transform: rotate(90deg); }
+
+.staple-bottom-left {
+  bottom: -5px;
+  left: -5px;
+  transform: rotate(-90deg); }
+
+.staple-bottom-right {
+  bottom: -5px;
+  right: -5px;
+  transform: rotate(180deg); }
 
 .header .image-logo {
   margin: 1em auto;
@@ -145,16 +171,22 @@ a:link, a:visited, a:hover, a:active {
     margin: -26.5vw auto 4em;
     line-height: 1.3em;
     width: 80%; }
+    .flex-container .event-row .event-card .event-menu-item-staples {
+      position: relative;
+      transform: translateY(50%);
+      z-index: 2; }
+      .flex-container .event-row .event-card .event-menu-item-staples .staple {
+        z-index: 3; }
     .flex-container .event-row .event-card .event-card-image-container {
       display: block;
       height: 55vw;
       overflow: hidden;
-      transform: translateY(50%);
       width: 55vw; }
       .flex-container .event-row .event-card .event-card-image-container img {
         display: block;
         height: 100%;
         object-fit: cover;
+        position: relative;
         width: 100%; }
     .flex-container .event-row .event-card .event-card-text {
       background-color: #c9e1d4;
@@ -194,7 +226,7 @@ a:link, a:visited, a:hover, a:active {
   .main-content .event-details {
     background-image: url(../splotch-brown.png);
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: 100% 100%;
     display: inline-block;
     font-size: 0.8em;
     margin-bottom: 2em;
@@ -231,6 +263,24 @@ a:link, a:visited, a:hover, a:active {
       background-repeat: no-repeat;
       background-size: contain; }
 
+.about-page-content {
+  margin: 1em auto 2em;
+  width: 90%; }
+  .about-page-content .about-image-staples {
+    position: relative;
+    margin: 1em auto; }
+  .about-page-content img {
+    display: block;
+    height: auto;
+    max-width: 100%;
+    text-align: center; }
+
+.add-parag-wrapper {
+  background-image: url(../splotch-brown.png);
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 100% 98%; }
+
 .footer-overlay {
   background-image: url(../paper-texture.jpg);
   background-size: cover; }
@@ -253,9 +303,39 @@ a:link, a:visited, a:hover, a:active {
           max-height: 42px;
           max-width: 42px; }
 
+.archive-container {
+  margin-top: 1em; }
+  .archive-container .archive-card {
+    display: block;
+    margin-bottom: 2.5em; }
+    .archive-container .archive-card .archive-card-image-container {
+      width: calc(87vw - 10px);
+      height: calc(59vw - 10px);
+      position: relative; }
+      .archive-container .archive-card .archive-card-image-container img {
+        display: block;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        width: 100%;
+        z-index: 1; }
+      .archive-container .archive-card .archive-card-image-container .archive-card-colour-block {
+        background-image: url(../splotch-brown.png);
+        background-size: 100% 100%;
+        position: relative;
+        right: -10px;
+        bottom: -10px;
+        height: 103%;
+        width: 103%; }
+    .archive-container .archive-card .archive-card-title {
+      color: black;
+      margin-top: 1em;
+      position: relative; }
+  .archive-container .archive-card:nth-child(even) .archive-card-title {
+    text-align: right; }
+
 @media only screen and (min-width: 360px) {
   .flex-container .event-row .event-card {
-    margin: -100px auto 2em;
     max-width: 300px; }
     .flex-container .event-row .event-card .event-card-image-container {
       max-height: 200px;
@@ -283,7 +363,36 @@ a:link, a:visited, a:hover, a:active {
       z-index: 2; }
     .home-images .home-image-3 {
       transform: translateX(-6em) translateY(2em) rotateZ(-10deg);
-      z-index: 3; } }
+      z-index: 3; }
+
+  .archive-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    margin-top: 2em;
+    width: 100%; }
+    .archive-container .archive-card {
+      flex-basis: calc(50% - 2em);
+      margin: 0 1em 2.5em; }
+      .archive-container .archive-card .archive-card-image-container {
+        width: calc(100% - 20px);
+        height: 200px;
+        position: relative; }
+        .archive-container .archive-card .archive-card-image-container img {
+          height: 100%;
+          object-fit: cover;
+          position: absolute;
+          width: 100%;
+          z-index: 1; }
+        .archive-container .archive-card .archive-card-image-container .archive-card-colour-block {
+          right: -10px;
+          bottom: -10px;
+          height: calc(100% + 10px);
+          width: calc(100% + 10px); }
+      .archive-container .archive-card .archive-card-title {
+        margin-top: 1.5em; }
+    .archive-container .archive-card:nth-child(even) .archive-card-title {
+      text-align: left; } }
 @media only screen and (min-width: 768px) {
   .header {
     margin-bottom: 2em; }
@@ -310,6 +419,13 @@ a:link, a:visited, a:hover, a:active {
 
   .main-content {
     margin: 2.5em auto 3em; }
+
+  .about-page-content {
+    margin: 2.5em auto 3em;
+    width: 80%; }
+    .about-page-content .about-image-staples {
+      margin: 2em auto;
+      max-width: 80%; }
 
   .flex-container {
     margin: 2em auto 5em;
@@ -345,7 +461,10 @@ a:link, a:visited, a:hover, a:active {
     padding: 2em; } }
 @media only screen and (min-width: 1024px) {
   h1 {
-    font-size: 2em; }
+    font-size: 2.5em; }
+
+  h2 {
+    font-size: 1.8em; }
 
   .header {
     position: relative;
@@ -482,7 +601,7 @@ a:link, a:visited, a:hover, a:active {
     width: 60%; }
 
   .main-content {
-    margin: 3em auto 4.5em;
+    margin: 3em auto 7em;
     width: 60%; }
     .main-content .events-content {
       margin-bottom: 6.5em; }
@@ -509,6 +628,13 @@ a:link, a:visited, a:hover, a:active {
         .main-content .event-sidebar .registration .registration-link {
           margin-left: 10%; }
 
+  .events-main-content {
+    margin: 3em auto 4.5em; }
+
+  .about-page-content {
+    margin: 3em auto 8em;
+    width: 60%; }
+
   .flex-container {
     margin: 0 auto 5em;
     min-width: 900px;
@@ -529,6 +655,70 @@ a:link, a:visited, a:hover, a:active {
 
   .footer-overlay {
     display: none; } }
+@media only screen and (min-width: 1200px) {
+  .about-page-content {
+    width: 80%; }
+    .about-page-content .about-content {
+      width: 50%; }
+    .about-page-content .about-flex {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5em; }
+    .about-page-content .about-image-staples {
+      max-width: 50%;
+      margin: 0 0 0 3em; }
+    .about-page-content .add-parag-wrapper {
+      width: 50%;
+      width: calc(50% - 3em); }
+
+  .add-parag-wrapper {
+    background-image: none;
+    margin-top: 4.8em;
+    padding-left: 2em;
+    position: relative; }
+    .add-parag-wrapper h2 {
+      line-height: 1em;
+      margin-bottom: 0.6em; }
+    .add-parag-wrapper h2, .add-parag-wrapper p {
+      padding-right: 3em;
+      position: relative;
+      z-index: 1; }
+    .add-parag-wrapper .colour-block-about {
+      background-color: #e7d0ae;
+      position: absolute;
+      top: -1.3em;
+      bottom: -1.3em;
+      left: 0;
+      width: 75px; }
+
+  .archive-container {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 2em;
+    width: 100%; }
+    .archive-container .archive-card {
+      margin-bottom: 3em;
+      flex-basis: calc(33% - 3em);
+      margin: 0 1.5em 3.5em; }
+      .archive-container .archive-card .archive-card-image-container {
+        width: calc(100% - 25px);
+        height: 180px;
+        position: relative; }
+        .archive-container .archive-card .archive-card-image-container img {
+          height: 100%;
+          object-fit: cover;
+          position: absolute;
+          width: 100%;
+          z-index: 1; }
+        .archive-container .archive-card .archive-card-image-container .archive-card-colour-block {
+          right: -10px;
+          bottom: -10px;
+          height: calc(100% + 15px);
+          width: calc(100% + 15px); }
+      .archive-container .archive-card .archive-card-title {
+        margin-top: 1.5em; }
+    .archive-container .archive-card:nth-child(even) .archive-card-title {
+      text-align: left; } }
 /* END */
 
 /*# sourceMappingURL=theme-styles.css.map */
