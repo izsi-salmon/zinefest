@@ -490,12 +490,15 @@ a:link, a:visited, a:hover, a:active{
 }
 
 .gallery-container{
+    display: flex;
+        flex-flow: row wrap;
     margin-top: 1em;
+    width: 100%;
     .gallery-image-container{
         display: block;
-        height: 80vw;
-        margin: 0 auto 2em;
-        width: 80vw;
+        height: calc(30vw - 0.2em);
+        margin: 0 0.1em 0.2em;
+        flex-basis: calc(30vw - 0.2em);
         img{
             display: block;
             height: 100%;
