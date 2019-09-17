@@ -9,19 +9,31 @@
     $gallery = new WP_Query($galleryArgs);
 ?>
 
-<div class="main-content">
-   
-    <h1 class="page-title"><?= the_title(); ?></h1>
-    <?php if( $gallery->have_posts() ): ?>
-       <ul>
-        <?php while($gallery->have_posts()): $gallery->the_post(); ?>
+<div class="gallery-collumn">
+   <div class="collumn-colour-block"></div>
+    <div class="main-content">
 
-            <li><?= the_title(); ?></li>
+        <div class="back-button" onclick="history.back();">
+            <img src="<?php bloginfo('template_url'); ?>/assets/arrow.png" alt="arrow"> <span>Back</span>
+        </div>
 
-        <?php endwhile; ?>
-        </ul>
-    <?php endif; ?>
+        <h1 class="page-title gallery-title"><?= the_title(); ?></h1>
 
-    <?php get_footer(); ?>
-    
+        <?php if( $gallery->have_posts() ): ?>
+           <div class="gallery-container">
+                <?php while($gallery->have_posts()): $gallery->the_post(); ?>
+                    <?php if(has_post_thumbnail()): ?>
+
+                        <a href="<?= esc_url(get_permalink()); ?>" class="gallery-image-container">
+                            <?php the_post_thumbnail(); ?>
+                        </a>
+
+                    <?php endif; ?>
+                <?php endwhile; ?>
+            </div>
+        <?php endif; ?>
+
+    </div>
 </div>
+
+<?php get_footer(); ?>

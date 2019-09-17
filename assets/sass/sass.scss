@@ -46,7 +46,6 @@ $yellow: #fde784;     // 253, 231, 132
 @mixin highlight-yellow{
     background-image: url(../dash-yellow.png);
     @include highlight;
-        
 }
 
 @mixin highlight-brown{
@@ -101,6 +100,19 @@ p{
     bottom: -5px;
     right: -5px;
     transform: rotate(180deg);
+}
+
+// BACK BUTTON
+
+.back-button{
+    display: flex;
+        align-items: center;
+    img{
+        margin-right: 0.5em;
+        max-height: 1em;
+        max-width: 1em;
+        transform: rotateZ(180deg);
+    }
 }
 
 .header{
@@ -228,9 +240,10 @@ a:link, a:visited, a:hover, a:active{
     background-image: url(../dash-brown.png);
         background-position: center;
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: 100% 30%;
     display: inline-block;
-    margin: 0;
+    line-height: 1.2em;
+    margin: 0.3em 0 0;
     padding: 0 0.3em 0.8em 0;
 }
 
@@ -457,6 +470,41 @@ a:link, a:visited, a:hover, a:active{
     }
 }
 
+.gallery-collumn{
+    padding: 0.1em 0;
+    position: relative;
+    .collumn-colour-block{
+        background-color: $brown;
+        position: absolute;
+            top: 0;
+            bottom: 0;
+        width: 30%;
+        z-index: -1;
+    }
+}
+
+.gallery-title{
+    background-image: none;
+    font-size: 1.1em;
+    text-transform: uppercase;
+}
+
+.gallery-container{
+    margin-top: 1em;
+    .gallery-image-container{
+        display: block;
+        height: 80vw;
+        margin: 0 auto 2em;
+        width: 80vw;
+        img{
+            display: block;
+            height: 100%;
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+}
+
 @media only screen and (min-width: 360px){
     .flex-container{
         .event-row{
@@ -523,6 +571,7 @@ a:link, a:visited, a:hover, a:active{
                     height: 100%;
                     object-fit: cover;
                     position: absolute;
+                    transition: 0.5s;
                     width: 100%;
                     z-index: 1;
                 }
@@ -530,6 +579,7 @@ a:link, a:visited, a:hover, a:active{
                         right: -10px;
                         bottom: -10px;
                     height: calc(100% + 10px);
+                    transition: 0.5s;
                     width: calc(100% + 10px);
                 }
             }
@@ -543,7 +593,12 @@ a:link, a:visited, a:hover, a:active{
             }
         }
         .archive-card:hover{
-            
+            img{
+                transform: translate(-3px, -3px);
+            }
+            .archive-card-colour-block{
+                transform: translate(3px, 3px);
+            }
         }
     }
     
@@ -632,9 +687,12 @@ a:link, a:visited, a:hover, a:active{
                             bottom: 0;
                             left: 0;
                         text-align: center;
+                        transition: 0.3s;
                         width: 100%;
                     }
-                    
+                    .event-link-wrapper:hover{
+                        transform: scale(1.03);
+                    }
                 }
             }
         }

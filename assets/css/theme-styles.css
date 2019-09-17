@@ -60,6 +60,15 @@ p {
   right: -5px;
   transform: rotate(180deg); }
 
+.back-button {
+  display: flex;
+  align-items: center; }
+  .back-button img {
+    margin-right: 0.5em;
+    max-height: 1em;
+    max-width: 1em;
+    transform: rotateZ(180deg); }
+
 .header .image-logo {
   margin: 1em auto;
   text-align: center; }
@@ -157,9 +166,10 @@ a:link, a:visited, a:hover, a:active {
   background-image: url(../dash-brown.png);
   background-position: center;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: 100% 30%;
   display: inline-block;
-  margin: 0;
+  line-height: 1.2em;
+  margin: 0.3em 0 0;
   padding: 0 0.3em 0.8em 0; }
 
 .flex-container {
@@ -334,6 +344,35 @@ a:link, a:visited, a:hover, a:active {
   .archive-container .archive-card:nth-child(even) .archive-card-title {
     text-align: right; }
 
+.gallery-collumn {
+  padding: 0.1em 0;
+  position: relative; }
+  .gallery-collumn .collumn-colour-block {
+    background-color: #e7d0ae;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 30%;
+    z-index: -1; }
+
+.gallery-title {
+  background-image: none;
+  font-size: 1.1em;
+  text-transform: uppercase; }
+
+.gallery-container {
+  margin-top: 1em; }
+  .gallery-container .gallery-image-container {
+    display: block;
+    height: 80vw;
+    margin: 0 auto 2em;
+    width: 80vw; }
+    .gallery-container .gallery-image-container img {
+      display: block;
+      height: 100%;
+      object-fit: cover;
+      width: 100%; }
+
 @media only screen and (min-width: 360px) {
   .flex-container .event-row .event-card {
     max-width: 300px; }
@@ -382,17 +421,23 @@ a:link, a:visited, a:hover, a:active {
           height: 100%;
           object-fit: cover;
           position: absolute;
+          transition: 0.5s;
           width: 100%;
           z-index: 1; }
         .archive-container .archive-card .archive-card-image-container .archive-card-colour-block {
           right: -10px;
           bottom: -10px;
           height: calc(100% + 10px);
+          transition: 0.5s;
           width: calc(100% + 10px); }
       .archive-container .archive-card .archive-card-title {
         margin-top: 1.5em; }
     .archive-container .archive-card:nth-child(even) .archive-card-title {
-      text-align: left; } }
+      text-align: left; }
+    .archive-container .archive-card:hover img {
+      transform: translate(-3px, -3px); }
+    .archive-container .archive-card:hover .archive-card-colour-block {
+      transform: translate(3px, 3px); } }
 @media only screen and (min-width: 768px) {
   .header {
     margin-bottom: 2em; }
@@ -455,7 +500,10 @@ a:link, a:visited, a:hover, a:active {
             bottom: 0;
             left: 0;
             text-align: center;
+            transition: 0.3s;
             width: 100%; }
+          .flex-container .event-row .event-card .event-card-text .event-link-wrapper:hover {
+            transform: scale(1.03); }
 
   .footer-overlay .footer {
     padding: 2em; } }
