@@ -105,7 +105,8 @@ p{
 // BACK BUTTON
 
 .back-button{
-    display: flex;
+    cursor: pointer;
+    display: inline-flex;
         align-items: center;
     img{
         margin-right: 0.5em;
@@ -320,7 +321,6 @@ a:link, a:visited, a:hover, a:active{
     width: 90%;
 }
 
-
 .main-content{
     margin: 1em auto 2em;
     width: 90%;
@@ -485,6 +485,7 @@ a:link, a:visited, a:hover, a:active{
 
 .gallery-title{
     background-image: none;
+    display: block;
     font-size: 1.1em;
     text-transform: uppercase;
 }
@@ -498,7 +499,7 @@ a:link, a:visited, a:hover, a:active{
         display: block;
         height: calc(30vw - 0.2em);
         margin: 0 0.1em 0.2em;
-        flex-basis: calc(30vw - 0.2em);
+        flex-basis: calc(33% - 0.2em);
         img{
             display: block;
             height: 100%;
@@ -698,6 +699,24 @@ a:link, a:visited, a:hover, a:active{
                     }
                 }
             }
+        }
+    }
+    
+    .gallery-collumn{
+        .collumn-colour-block{
+            width: 25%;
+        }
+    }
+
+    .gallery-title{
+        font-size: 1.6em;
+    }
+
+    .gallery-container{
+        .gallery-image-container{
+            height: calc(30vw - 0.8em);
+            margin: 0 0.4em 0.8em;
+            flex-basis: calc(33% - 0.8em);
         }
     }
     
@@ -970,6 +989,33 @@ a:link, a:visited, a:hover, a:active{
                     }
                 }
             }
+        }
+    }
+    
+    .gallery-collumn{
+        padding: 0;
+        position: relative;
+        .collumn-colour-block{
+            display: none;
+            background-color: $brown;
+            height: 5em;
+            position: absolute;
+                top: 0;
+                bottom: auto;
+            width: 50%;
+            z-index: -1;
+        }
+    }
+    
+    .gallery-title{
+        font-size: 1.8em;
+    }
+
+    .gallery-container{
+        .gallery-image-container{
+            height: calc(20vw - 0.8em);
+            margin: 0 0.4em 0.8em;
+            flex-basis: calc(33% - 0.8em);
         }
     }
     
