@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wellington Zinefest is a volunteer run community that organises an annual festival, market days, workshops and meet-ups for local zine-makers.">
+    <meta name="keywords" content="zines,wellington,worshops,creative,DIY,zinefest,festival,market">
     <title><?= get_bloginfo('name'); ?></title>
     <?php wp_head(); ?>
 </head>
