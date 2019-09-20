@@ -30,35 +30,9 @@ add_action('init', 'addCustomLogo');
 function addCustomMenus(){
     add_theme_support('menus');
     register_nav_menu('header_nav', 'Navigation Bar');
-    register_nav_menu('social_media_links', 'Social Media Links');
 }
 add_action('init', 'addCustomMenus');
-add_filter('nav_menu_css_class' , 'active_nav_class' , 10 , 2);
-class child_wrap extends Walker_Nav_Menu
-{
-    function start_lvl(&$output, $depth = 0, $args = array())
-    {
-        $indent = str_repeat("\t", $depth);
-        $output .= "\n$indent<div class=\"sub-menu-container\"><ul class=\"sub-menu\">\n";
-    }
-    function end_lvl(&$output, $depth = 0, $args = array())
-    {
-        $indent = str_repeat("\t", $depth);
-        $output .= "$indent</ul></div>\n";
-    }
-}
-function active_nav_class ($classes, $item) {
-    if (in_array('current-menu-ancestor', $classes) || in_array('current-menu-item', $classes) ){
-        $classes[] = 'active ';
-    }
-    return $classes;
-}
-add_filter( 'nav_menu_link_attributes', function ( $atts, $item, $args ) {
-    if ( in_array('menu-item-has-children', $item->classes) ) { // change 1161 to the ID of your menu item.
-        $atts['id'] = 'dropdownButton';
-    }
-    return $atts;
-}, 10, 3 );
+
 // ----- POST TYPES -----
 //// EXAMPLE
 //
