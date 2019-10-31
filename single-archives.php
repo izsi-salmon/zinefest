@@ -25,7 +25,7 @@
                     <?php if(has_post_thumbnail()): ?>
 
                         <a href="<?= esc_url(get_permalink()); ?>" class="gallery-image-container">
-                            <?php the_post_thumbnail('medium'); ?>
+                            <?php the_post_thumbnail('large'); ?>
                         </a>
 
                     <?php endif; ?>
