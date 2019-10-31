@@ -31,6 +31,8 @@
                     <?php endif; ?>
                 <?php endwhile; ?>
             </div>
+        <?php else: ?>
+            <div class="no-events-text"><p>No items added to this archive yet, watch this space!</p></div>
         <?php endif; ?>
 
     </div>

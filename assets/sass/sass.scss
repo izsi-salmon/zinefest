@@ -345,46 +345,44 @@ a:link, a:visited, a:hover, a:active{
         margin-bottom: 2em;
         padding: 0.5em 1.5em;
     }
-    .event-sidebar{
-        .registration{
-            display: flex;
+    .registration{
+        display: flex;
+            align-items: center;
+        -webkit-display: flex;
+        -webkit-align-items: center;
+        margin: 1em 0;
+        .registration-title{
+            background-color: $greenLight;
+            display: inline-block;
+            height: 1.3em;
+            margin: 3em 0.5em 3em 0;
+            transform: rotateZ(-45deg);
+            text-transform: uppercase;
+            h2{
+                font-size: 1.1em;
+                transform: translate(20%, -50%);
+            }
+        }
+        p{
+            margin-bottom: 0.2em;
+        }
+        .registration-link{
+            display: inline-flex;
                 align-items: center;
-            -webkit-display: flex;
+            -webkit-display: inline-flex;
             -webkit-align-items: center;
-            margin: 1em 0;
-            .registration-title{
-                background-color: $greenLight;
-                display: inline-block;
-                height: 1.3em;
-                margin: 3em 0.5em 3em 0;
-                transform: rotateZ(-45deg);
-                text-transform: uppercase;
-                h2{
-                    font-size: 1.1em;
-                    transform: translate(20%, -50%);
-                }
+            padding-right: 0.25em;
+            .link-arrrow{
+                height: 1em;
+                margin-left: 0.3em;
             }
-            p{
-                margin-bottom: 0.2em;
-            }
-            .registration-link{
-                display: inline-flex;
-                    align-items: center;
-                -webkit-display: inline-flex;
-                -webkit-align-items: center;
-                padding-right: 0.25em;
-                .link-arrrow{
-                    height: 1em;
-                    margin-left: 0.3em;
-                }
-            }
-            a.registration-link:link, a.registration-link:visited, a.registration-link:active, a.registration-link:hover{
-                color: black;
-                text-decoration: none;
-            }
-            a.registration-link:hover, a.registration-link:active{
-                @include highlight-yellow;
-            }
+        }
+        a.registration-link:link, a.registration-link:visited, a.registration-link:active, a.registration-link:hover{
+            color: black;
+            text-decoration: none;
+        }
+        a.registration-link:hover, a.registration-link:active{
+            @include highlight-yellow;
         }
     }
     
@@ -1135,26 +1133,9 @@ a:link, a:visited, a:hover, a:active{
             align-self: flex-start;
             -webkit-align-self: flex-start;
         }
-        .the-content-sidebar{
-            width: 70%;
-        }
-        .event-sidebar{
-            display: flex;
-                flex-direction: column;
-            -webkit-display: flex;
-            -webkit-flex-direction: column;
-            float: right;
-            margin-left: 3em;
             .registration{
-                align-self: flex-start;
-                -webkit-align-self: flex-start;
-                display: inline-block;
                 .registration-title{
-                    height: 1.6em;
-                    margin: 1em 0 1em;
-                    transform: rotateZ(0);
-                    -webkit-transform: rotateZ(0);
-                    -ms-transform: rotateZ(0);
+                    margin: 3em 0 4em;
                     h2{
                         font-size: 1.4em;
                     }
@@ -1166,7 +1147,6 @@ a:link, a:visited, a:hover, a:active{
                     margin-left: 10%;
                 }
             }
-        }
     }
     
     .events-main-content{

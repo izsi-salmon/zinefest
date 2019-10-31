@@ -24,13 +24,14 @@
     ?>
     <div class="main-content">
         <h1 class="event-title"><?= the_title(); ?></h1>
-        <?php if($regLink1 || $regLink2 || $regLink3): ?>
-            <div class="event-sidebar">
-                <div class="event-details">
-                    <div><?= $eventDate ?></div>
-                    <div><?= $eventStartTime ?> to <?= $eventEndTime ?></div>
-                    <div><?= $eventLocation ?></div>
-                </div>
+        
+            <div class="event-details">
+                <div><?= $eventDate ?></div>
+                <div><?= $eventStartTime ?> <?php if($eventEndTime):?>to <?= $eventEndTime ?><?php endif; ?></div>
+                <div><?= $eventLocation ?></div>
+            </div>
+            <?php if($regLink1 || $regLink2 || $regLink3): ?>
+                <div class="registration-container">
                     <div class="registration">
                         <div class="registration-title"><h2>Register</h2></div>
                         <div>
@@ -48,16 +49,9 @@
                             <?php endif ?>
                         </div>
                     </div>
-            </div>
-            <div class="the-content the-content-sidebar"><?= get_the_content(); ?></div>
-        <?php else: ?>
-            <div class="event-details">
-                <div><?= $eventDate ?></div>
-                <div><?= $eventStartTime ?> to <?= $eventEndTime ?></div>
-                <div><?= $eventLocation ?></div>
-            </div>
+                </div>
+            <?php endif ?>
             <div class="the-content"><?= get_the_content(); ?></div>
-        <?php endif ?>
     </div>
 <?php endwhile; wp_reset_query(); ?>
 

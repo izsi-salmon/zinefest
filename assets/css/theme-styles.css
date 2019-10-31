@@ -251,37 +251,37 @@ a:link, a:visited, a:hover, a:active {
     font-size: 0.8em;
     margin-bottom: 2em;
     padding: 0.5em 1.5em; }
-  .main-content .event-sidebar .registration {
+  .main-content .registration {
     display: flex;
     align-items: center;
     -webkit-display: flex;
     -webkit-align-items: center;
     margin: 1em 0; }
-    .main-content .event-sidebar .registration .registration-title {
+    .main-content .registration .registration-title {
       background-color: #c9e1d4;
       display: inline-block;
       height: 1.3em;
       margin: 3em 0.5em 3em 0;
       transform: rotateZ(-45deg);
       text-transform: uppercase; }
-      .main-content .event-sidebar .registration .registration-title h2 {
+      .main-content .registration .registration-title h2 {
         font-size: 1.1em;
         transform: translate(20%, -50%); }
-    .main-content .event-sidebar .registration p {
+    .main-content .registration p {
       margin-bottom: 0.2em; }
-    .main-content .event-sidebar .registration .registration-link {
+    .main-content .registration .registration-link {
       display: inline-flex;
       align-items: center;
       -webkit-display: inline-flex;
       -webkit-align-items: center;
       padding-right: 0.25em; }
-      .main-content .event-sidebar .registration .registration-link .link-arrrow {
+      .main-content .registration .registration-link .link-arrrow {
         height: 1em;
         margin-left: 0.3em; }
-    .main-content .event-sidebar .registration a.registration-link:link, .main-content .event-sidebar .registration a.registration-link:visited, .main-content .event-sidebar .registration a.registration-link:active, .main-content .event-sidebar .registration a.registration-link:hover {
+    .main-content .registration a.registration-link:link, .main-content .registration a.registration-link:visited, .main-content .registration a.registration-link:active, .main-content .registration a.registration-link:hover {
       color: black;
       text-decoration: none; }
-    .main-content .event-sidebar .registration a.registration-link:hover, .main-content .event-sidebar .registration a.registration-link:active {
+    .main-content .registration a.registration-link:hover, .main-content .registration a.registration-link:active {
       background-image: url(../dash-yellow.png);
       background-position: center;
       background-repeat: no-repeat;
@@ -853,31 +853,14 @@ a:link, a:visited, a:hover, a:active {
     .main-content .event-details {
       align-self: flex-start;
       -webkit-align-self: flex-start; }
-    .main-content .the-content-sidebar {
-      width: 70%; }
-    .main-content .event-sidebar {
-      display: flex;
-      flex-direction: column;
-      -webkit-display: flex;
-      -webkit-flex-direction: column;
-      float: right;
-      margin-left: 3em; }
-      .main-content .event-sidebar .registration {
-        align-self: flex-start;
-        -webkit-align-self: flex-start;
-        display: inline-block; }
-        .main-content .event-sidebar .registration .registration-title {
-          height: 1.6em;
-          margin: 1em 0 1em;
-          transform: rotateZ(0);
-          -webkit-transform: rotateZ(0);
-          -ms-transform: rotateZ(0); }
-          .main-content .event-sidebar .registration .registration-title h2 {
-            font-size: 1.4em; }
-        .main-content .event-sidebar .registration p {
-          margin-bottom: 0.3em; }
-        .main-content .event-sidebar .registration .registration-link {
-          margin-left: 10%; }
+    .main-content .registration .registration-title {
+      margin: 3em 0 4em; }
+      .main-content .registration .registration-title h2 {
+        font-size: 1.4em; }
+    .main-content .registration p {
+      margin-bottom: 0.3em; }
+    .main-content .registration .registration-link {
+      margin-left: 10%; }
 
   .events-main-content {
     margin: 3em auto 4.5em; }
