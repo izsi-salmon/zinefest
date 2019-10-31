@@ -4,7 +4,7 @@ function addCustomThemeStyles(){
   // Style
   wp_enqueue_style('googlefonts', 'https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Nunito:400,700', array(), '0.0.1', 'all');
   wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v5.7.2/css/all.css', array(), '5.7.2', 'all');
-  wp_enqueue_style('maincss', get_template_directory_uri().'/assets/css/theme-styles.css', array(), '0.2.0', 'all');
+  wp_enqueue_style('maincss', get_template_directory_uri().'/assets/css/theme-styles.css', array(), '0.2.1', 'all');
   global $wp_query;
 }
 add_action('wp_enqueue_scripts', 'addCustomThemeStyles');

@@ -21,7 +21,7 @@
 
             <a href="<?= esc_url(get_permalink()); ?>" class="archive-card">
                 <div class="archive-card-image-container">
-                    <?php the_post_thumbnail(); ?>
+                    <?php the_post_thumbnail('medium'); ?>
                     <div class="archive-card-colour-block"></div>
                 </div>
                 <div class="archive-card-title"><?php the_title(); ?></div>
