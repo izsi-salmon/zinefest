@@ -4,19 +4,13 @@ function addCustomThemeStyles(){
   // Style
   wp_enqueue_style('googlefonts', 'https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700|Nunito:400,700', array(), '0.0.1', 'all');
   wp_enqueue_style('fontawesome', 'https://use.fontawesome.com/releases/v5.7.2/css/all.css', array(), '5.7.2', 'all');
-  wp_enqueue_style('maincss', get_template_directory_uri().'/assets/css/theme-styles.css', array(), '0.1.9', 'all');
-//  wp_enqueue_style('CustomFieldStyle', get_template_directory_uri() . '/assets/custom-fields-styles.css', array(), '1.0.0', 'all');
-//  wp_enqueue_style('commentstyles', get_template_directory_uri() . '/assets/comments-styles.css', array(), '1.0.0', 'all');
-  // Scripts
-//  wp_enqueue_script('jquery');
-  wp_enqueue_script('themescripts', get_template_directory_uri().'/assets/theme-script.js', array(), '0.0.7', true);
+  wp_enqueue_style('maincss', get_template_directory_uri().'/assets/css/theme-styles.css', array(), '0.2.0', 'all');
   global $wp_query;
 }
 add_action('wp_enqueue_scripts', 'addCustomThemeStyles');
 // ------ THEME SUPPORTS ------
 // Post thumbnails
 add_theme_support('post-thumbnails');
-//add_image_size( 'gallery', 300, 300, true );
 // Custom logo
 function addCustomLogo() {
 	add_theme_support('custom-logo', array(
@@ -32,37 +26,6 @@ function addCustomMenus(){
     register_nav_menu('header_nav', 'Navigation Bar');
 }
 add_action('init', 'addCustomMenus');
-
-// ----- POST TYPES -----
-//// EXAMPLE
-//
-//function add_post_type(){
-//    $labels = array(
-//        'name' => _x('', 'post type name', 'textdomain'),
-//        'singular_name' => _x('', 'post type singular name', 'textdomain'),
-//        'add_new_item' => _x('Add ', 'Adding ', 'textdomain')
-//    );
-//    
-//    $args = array(
-//        'labels' => $labels,
-//        'description' => '',
-//        'public' => true,
-//        'hierarchical' => true,
-//        'show_ui' => true,
-//        'show_in_menu' => true,
-//        'show_in_nav_menus' => false,
-//        'menu_position' => ,
-//        'menu_icon' => 'dashicons-',
-//        'supports' => array(
-//            'title',
-//            'editor',
-//            'thumbnail'
-//        ),
-//        'query_var' => true
-//    );
-//    register_post_type('', $args);
-//}
-// Don't forget to add action! :)
 
 function add_events_post_type(){
     $labels = array(
@@ -166,11 +129,6 @@ add_action('init','add_gallery_post_type');
 add_action('init','add_events_post_type');
 add_action('init','add_archives_post_type');
 add_action('init','conditional_post_type');
-// ----- REMOVE ACTIONS -----
-// Stop wordpress from rendering two meta descriptions
-//remove_action('wp_head', 'description');
-// ----- FILTRES -----
-// Stops Yoast Seo from breaking replytocom (Reply to comment link functionality)
 add_filter( 'wpseo_remove_reply_to_com', '__return_false' );
 // Changes the_excerpt() more text
 function wpdocs_excerpt_more( $more ) {
