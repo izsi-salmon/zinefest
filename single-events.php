@@ -51,7 +51,7 @@
                     </div>
                 </div>
             <?php endif ?>
-            <div class="the-content"><?= get_the_content(); ?></div>
+            <div class="the-content"><?= the_content(); ?></div>
     </div>
 <?php endwhile; wp_reset_query(); ?>
 

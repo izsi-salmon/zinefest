@@ -9,7 +9,7 @@ $getArchivesArgs = array(
 $getArchives = new WP_Query($getArchivesArgs);
 
 if( $getArchives->have_posts() ){
-
+    
     while($getArchives->have_posts()): $getArchives->the_post();
         $getTitle = get_the_title();
         $removedSpace = str_replace(' ', '', $getTitle);
@@ -153,6 +153,7 @@ $metaboxes = array(
           ),
           'add_parag' => array(
               'title' => __('Additional paragraph content', 'zinefestTheme'),
+              'description' => 'Add a p tag at the beginning of each paragraph and /p tag at the end of each paragraph to format the text into paragraphs.',
               'type' => 'add_textarea'
           )
     )
@@ -212,7 +213,7 @@ function show_metaboxes( $post, $args ) {
                 break;
                 case 'add_textarea':
                     if('about-template.php' == get_post_meta( $post->ID, '_wp_page_template', true )){
-                        $output .= '<div class="form-group"><label for="' . $id . '">' . $field['title'] . '</label><textarea class="customInput" id="' . $id . '" name="' . $id . '" style="width: 100%;margin-top:10px;margin-bottom:20px;height:150px;" />' . $custom[$id][0] . '</textarea></div>';
+                        $output .= '<div class="form-group"><label for="' . $id . '">' . $field['title'] . '</label><p><em>' . $field['description'] . '</em></p><textarea class="customInput" id="' . $id . '" name="' . $id . '" style="width: 100%;margin-top:10px;margin-bottom:20px;height:150px;" />' . $custom[$id][0] . '</textarea></div>';
                     } else{
                         $output .= '<p>No additional paragraph can be added on this page template.</p>';
                     }
@@ -227,6 +228,7 @@ function show_metaboxes( $post, $args ) {
     }
     echo $output;
 }
+
 function save_metaboxes( $post_id ) {
     global $metaboxes;
     if ( ! wp_verify_nonce( $_POST['post_format_meta_box_nonce'], basename( __FILE__ ) ) )
